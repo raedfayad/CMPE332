@@ -1,47 +1,26 @@
+<?php include_once('./inc/functions.php');
+ ?>
 <!DOCTYPE HTML>
 
-<html>
-    <head>
-        <title>Animal Rescue Information Hub</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-    </head>
-    <body>
+<html lang="en">
+    <?php print_head("Animal Rescue Information Hub") ?>
+	
+    <body class="landing">
+		<?php print_header(true); ?>
 
-        <!-- Header -->
-            <header id="header">
-                <h1><strong><a href="index.html">Animal Rescue Information Hub</a></strong></h1>
-                <nav id="nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="">Organizations</a></li>
-                        <li><a href="">Adopt</a></li>
-                        <li><a href="">Donations</a></li>
-                        <li><a href="employee_login.html">Employee Login</a></li>
-
-                    </ul>
-                </nav>
-            </header>
-
-			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
-
-		<!-- Banner -->
-			<section id="banner">
-				<h2>CMPE 332 Course Project<br />by Group 40</h2>
-				<p>Lorem ipsum dolor sit amet nullam consequat <br /> interdum vivamus donce sed libero.</p>
-				<ul class="actions">
-					<li><a href="#" class="button special big">Get Started</a></li>
-				</ul>
-			</section>
-
-			<!-- One -->
-				<section id="one" class="wrapper style1">
+			<main>
+			<h2>Helping others is helping yourself - save one today!</h2>
+			
+			<p> lil blurb about project or something </p>
+			
+			</main>
+			
+				<!-- <section id="one" class="wrapper style1">
 					<div class="container 75%">
 						<div class="row 200%">
 							<div class="6u 12u$(medium)">
 								<header class="major">
-									<h2>Maecenas luctus lectus</h2>
+									<h2>Some sort of catchy catch phrase</h2>
 									<p>Perspiciatis doloremque recusandae dolor</p>
 								</header>
 							</div>
@@ -53,7 +32,7 @@
 					</div>
 				</section>
 
-			<!-- Two -->
+			-- Two --
 				<section id="two" class="wrapper style2 special">
 					<div class="container">
 						<header class="major">
@@ -81,7 +60,7 @@
 					</div>
 				</section>
 
-			<!-- Three -->
+			<!-- Three --
 				<section id="three" class="wrapper style1">
 					<div class="container">
 						<header class="major special">
@@ -133,7 +112,7 @@
 					</div>
 				</section>
 
-			<!-- Four -->
+			<!-- Four --
 				<section id="four" class="wrapper style3 special">
 					<div class="container">
 						<header class="major">
@@ -144,29 +123,9 @@
 							<li><a href="#" class="button special big">Get in touch</a></li>
 						</ul>
 					</div>
-				</section>
-
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="container">
-					<ul class="icons">
-						<li><a href="#" class="icon fa-facebook"></a></li>
-						<li><a href="#" class="icon fa-twitter"></a></li>
-						<li><a href="#" class="icon fa-instagram"></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+				</section> 
+ -->
+		<?php include("./inc/footer.php"); ?>
 
 	</body>
 </html>

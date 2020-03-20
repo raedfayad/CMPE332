@@ -47,6 +47,26 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
+	/*irum */
+	main {
+		margin: 32px 32px 64px 32px;
+	}
+	
+	.column-container {
+    display: flex;
+    flex-direction: row;
+	}
+
+.column-container section {
+    margin-left: 8px;
+    margin-right: 8px;
+    flex: 1 1 0; 
+	}
+	
+	.drop {
+		width: 100%;
+	}
+		
 
 /* Box Model */
 
@@ -2662,6 +2682,7 @@
 
 /* Section/Article */
 
+
 	section.special, article.special {
 		text-align: center;
 	}
@@ -2844,7 +2865,7 @@
 
 		.wrapper.style3 {
 			background-attachment: fixed;
-			background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+			background-image: url("images/overlay.png"), url("../../images/pet_banner.jpg");
 			background-position: center center;
 			background-size: cover;
 		}
@@ -3195,11 +3216,19 @@
 	body.is-touch #banner {
 		background-attachment: scroll;
 	}
-
+	
+	#logo {
+        display: block;
+		width: 200px;
+        position: relative;
+        top: -10px; 
+        left: -10px; 
+	
+    }
 	#banner {
 		padding: 16em 0 13em 0;
 		background-attachment: fixed;
-		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+		background-image: url("images/overlay.png"), url("../../images/pet_banner.jpg");
 		background-position: center top;
 		background-size: cover;
 		line-height: 1.75;
