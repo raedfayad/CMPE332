@@ -1,0 +1,186 @@
+create table organization (
+	org_name varchar(40) not null primary key, 
+	street_num varchar(5) not null, 
+	street_name varchar(30) not null, 
+	city varchar(20) not null,
+	province char(2) not null,
+	postal_code char(6) not null,
+	phone_num char(10),
+	org_type integer not null 	
+);
+
+create table employee(
+	employee_name varchar(40)  not null primary key,
+	street_num varchar(5) not null, 
+	street_name varchar(30) not null, 
+	city varchar(20) not null,
+	province char(2) not null,
+	postal_code char(6) not null,
+	phone_num char(10),
+	workplace varchar(40) not null, 
+	foreign key (workplace) references organization (org_name) on delete cascade
+);	
+
+create table owner(
+	owner_name varchar(40) not null,
+	workplace varchar(40)  not null,
+	primary key (owner_name, workplace),
+	foreign key (owner_name) references employee (employee_name),
+	foreign key (workplace) references organization (org_name) 
+);
+	
+create table SPCA (	
+	org_name varchar(40) not null,
+  	adoption_fee integer,
+	foreign key (org_name) references organization (org_name) 
+);
+
+create table shelter (	
+	shelter_name varchar(40) not null,
+  	adoption_fee integer,
+	website_url varchar(40),
+	foreign key (shelter_name) references organization (org_name) 
+);
+
+create table shelter_info (
+	shelter_name varchar(40) not null,
+	a_type varchar(30) not null,
+	a_max integer not null, 
+	primary key (shelter_name, a_type),
+	foreign key (shelter_name) references shelter (shelter_name) on delete cascade 
+);
+	
+create table rescuer (
+	rescuer_name varchar(40) not null,
+	foreign key (rescuer_name) references organization (org_name) 
+);
+
+create table family (
+	last_name varchar(20) not null,
+	phone_num char(10) not null,
+	street_num varchar(5) not null, 
+	street_name varchar(30) not null, 
+	city varchar(20) not null,
+	province char(2) not null,
+	primary key (last_name, phone_num)
+);
+
+create table driver(
+	name varchar(40) not null primary key,
+	emergency_phone char(10) not null,
+	drivers_license varchar(20),
+	license_plate varchar(7),
+	rescuer_org varchar(40), 
+	foreign key (rescuer_org) references rescuer (rescuer_name) on delete cascade
+);
+
+create table animal (
+	id integer not null primary key,
+	animal_type varchar(20) not null,
+	arrival_date date not null,
+	departure_date date,
+	spca_branch varchar(40) not null,
+	shelter_branch varchar(40),
+	driver_name varchar(40),
+	family_name varchar(20),
+	family_num char(10), 
+	foreign key (spca_branch) references SPCA (org_name),
+	foreign key (shelter_branch) references shelter (shelter_name),
+	foreign key (driver_name) references driver (name),
+	foreign key (family_name, family_num) references family (last_name, phone_num)
+	
+);
+
+create table vet_visit (
+	vet_name varchar(40) not null, 
+	reason varchar(300) not null, 
+	animal_weight_kg integer not null, 
+	visit_date date not null,
+	animal_id integer not null,
+	appt_id integer not null primary key,
+	foreign key (animal_id) references animal (id)
+);
+
+create table donations (
+	donator_name varchar(40) not null, 
+	amount integer not null, 
+	donation_date date not null, 
+	org_name varchar(40) not null,
+	primary key (donator_name, amount, donation_date, org_name),
+	foreign key (org_name) references organization (org_name) 
+);
+
+
+delete from organization;
+delete from employee;
+delete from owner;
+delete from SPCA;
+delete from shelter;
+delete from shelter_info;
+delete from rescuer;
+delete from family;
+delete from animal;
+delete from driver;
+delete from vet_visit;
+delete from donations;
+
+insert into organization values ('Kingston SPCA' , '1234' , 'Princess Street', 'Kingston', 'ON', 'K7B4S9', '6131234567',1);
+insert into organization values ('Ottawa SPCA' , '2345' , 'Othello Avenue' , 'Ottawa' , 'ON' , 'K1B1D3' , '61323456678',1);
+insert into organization values ('Toronto SPCA' , '1234' , 'Young Street' , 'Toronto' , 'ON' , 'K4J5T9' , '41912345678',1);
+
+insert into organization values ('Lost Paws' , '1234' , 'Division Street' , 'Kingston' , 'ON' , 'K7L3P6' , '6137356696',2) ;
+insert into organization values ('Save the Animals' , '5678' , 'William Road' , 'Kingston' , 'ON' , 'K5R3N0' , '6137371111',2);
+insert into organization values ('Care for Paws' , '2135' , 'Frontenac Drive' , 'Kingston' , 'ON' , 'K7L5R8' , '6137371211',2);
+
+insert into organization values ('Lost and Found', '2534' , 'Clergy Street' , 'Kingston' , 'ON' , 'K3L1X4' , '6137771234',3);
+insert into organization values ("Where'd You Go", '345' , 'Wood Street' , 'Kingston' , 'ON' , 'K5P1M4' , '6137891234',3);
+insert into organization values ('Come Back Jack', '128' , 'Humus Street' , 'Kingston' , 'ON' , 'K2N4F0' , '6138881234',3);
+
+insert into SPCA values ('Kingston SPCA' , '100');
+insert into SPCA values ('Ottawa SPCA' , '100');
+insert into SPCA values ('Toronto SPCA' , '100');
+
+insert into shelter values ('Lost Paws' , '150' , 'lostpaws.org');
+insert into shelter values ('Save the Animals' , '150' , 'savetheanimals.org');
+insert into shelter values ('Care for Paws' , '150' , 'careforpaws.org');
+
+insert into shelter_info values ('Lost Paws' , 'Dogs' , '30');
+insert into shelter_info values ('Lost Paws' , 'Cats' , '20');
+insert into shelter_info values ('Lost Paws' , 'Rabbits' , '5');
+
+insert into rescuer values ('Lost and Found');
+insert into rescuer values ("Where'd You Go");
+insert into rescuer values ('Come Back Jack');
+
+insert into employee values ('Raed Fayad' , '160' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X1' , '6134005960' , 'Lost Paws');
+insert into employee values ('Irum Shah' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '4193452314' , 'Care for Paws'); 
+insert into employee values ('Laure Halabi' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '4192341567' , 'Save the Animals');
+
+
+insert into owner values ('Raed Fayad' , 'Lost Paws');
+insert into owner values ('Laure Halabi' , 'Save the Animals');
+insert into owner values ('Irum Shah' , 'Care for Paws');
+
+insert into family values ('Mitchel' , '6132528873' , '222' , 'Knox Road' , 'Ottawa' , 'ON');
+insert into family values ('Nicol' , '7248975463' , '333' , 'Boomer Road' , 'Ottawa' , 'ON');
+insert into family values ('Beamish' , '6137371111' , '120' , 'Division Road' , 'Kingston' , 'ON');
+
+insert into driver values ('Mike Travis' , '6132325544' , 'H12345678910' , 'BZKL321' , 'Lost and Found');
+insert into driver values ('Aliyah Davis' , '4172167879' , 'H43215678910' , 'BJKL921' , 'Lost and Found');
+insert into driver values ('James Bond' , '4197777007' , 'H08978675645' , 'BNJL273' , 'Come Back Jack');
+
+insert into animal values ('12345678' , 'Dog' , '2019-02-28' , '' , 'Kingston SPCA' , null , null , null, null);
+insert into animal values ('10000000' , 'Dog' , '2019-12-01' , '2020-01-15' , 'Ottawa SPCA' , null, null, 'Mitchel' , '6132528873');
+insert into animal values ('10101101' , 'Dog' , '2019-03-12' , '2020-01-14' , 'Ottawa SPCA' , null, null, 'Nicol' , '7248975463');
+insert into animal values ('11000000' , 'Dog' , '2019-06-20' , '2020-01-05' , 'Kingston SPCA' , null, null , 'Beamish' , '6137371111');
+insert into animal values ('20063625' , 'Dog' , '2019-02-28' , '2019-04-02' , 'Kingston SPCA' , 'Lost Paws' , 'Mike Travis', null , null);
+insert into animal values ('63939293' , 'Rabbit' , '2019-03-28' , '2019-04-05' , 'Kingston SPCA' , 'Lost Paws' , 'Aliyah Davis', null , null);
+insert into animal values ('80221512' , 'Cat' , '2019-04-28' , '2019-04-06' , 'Kingston SPCA' , 'Lost Paws' , 'James Bond', null , null);
+
+insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '20' , '2019-03-12' , '10000000', '123456'); 
+insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '15' , '2019-04-12' , '20063625', '236734'); 
+insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '30' , '2019-05-12' , '12345678', '483284'); 
+
+insert into donations values ('Bill Gates' , '1200' , '2019-04-12' , 'Kingston SPCA');
+insert into donations values ('John Doe' , '3200' , '2019-05-12' , 'Lost Paws');
+insert into donations values ('Barack Obama' , '1000' , '2019-01-01' , 'Lost and Found');

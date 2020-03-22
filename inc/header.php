@@ -1,5 +1,5 @@
 <header id="header">
-				<h1><strong><a href="index.php">Animal Rescue Information Hub</a></strong></h1>
+				<h1><strong><a href="index.html">Animal Rescue Information Hub</a></strong></h1>
 				<nav id="nav">
 					<ul>
 						<li><a href="index.php">Home</a></li>

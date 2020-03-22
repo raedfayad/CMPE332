@@ -1,4 +1,6 @@
 <?php include_once('./inc/functions.php');
+	  include_once('./inc/forms.php');
+	  
  ?>
 
 <!DOCTYPE HTML>
@@ -15,80 +17,91 @@
 
 
 		<!-- Main -->
-			<section id="main" class="wrapper">
-				<div class="container">
+	<section id="main" class="wrapper">
+		<div class="container">
 
-					<header class="major special">
-						<h2>Adopt a Pet</h2>
-						<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-					</header>
+			<header class="major special">
+				<h2>Adopt a Pet</h2>
+				<p> Choose where you would like to adopt your pet from: </p>
+			</header>
 
-					<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
-					<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
-					
-					<div class="column-container">
+			<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
+			
+			<form id="org-form" method="post" action="./org_info.php">
 				
-						<section class="novel" id="SPCA">
-							<h2 class="title">SPCA</h2>
-							<div class="drop">
-							<div class="select-wrapper">
-								<select name="SPCA_locations" id="SPCA_locations">
-									<option value="">- SPCA locations -</option>
-										<?php
+				<div class="column-container">
+					
+					<section class="novel" id="organizations">
+						<h2 class="title">Organization</h2>
+						<div class="drop">
+						<div class="select-wrapper">
+							
+						<select name='organization' id='sel_organization' >
+		          	<option value='0' >Organizations</option>
+					<option value='1'>SPCA </option>
+					<option value='3'>Shelter </option>
+		        	</select>
+						</div>
+						</div>
+					</section>
 
-										$dbh = new PDO('mysql:host=localhost;dbname=animal_rescue', "root", ""); 
-										$row = $dbh->query("select org_name from SPCA");
-
-										foreach($row as $row){ ?>							
-											<option><?php echo $row['org_name'] ?></option>
-										<?php } ?>
-										</select>
+					<section class="novel" id="locations">
+						<h2 class="title">Shelters</h2>
+						<div class="drop">
+						<div class="select-wrapper">
+							<select name="locations" id="sel_location">
+								<option value="0"> Locations </option>
+									
+							</select>
 							</div>
 							</div>
 						</section>
-						
-						<section class="novel" id="rescue">
-							<h2 class="title">Rescue Organizations</h2>
-							<div class="drop">
-							<div class="select-wrapper">
-								<select name="rescue_locations" id="rescue_locations">
-									<option value="">- Rescue locations -</option>
-										<?php
 
-										$dbh = new PDO('mysql:host=localhost;dbname=animal_rescue', "root", ""); 
-										$row = $dbh->query("select rescuer_name from rescuer");
+				</div> <!-- .column-container -->
+				<div class="row separate">
+					<input type="hidden" name="<?= CONTACT_FORM_SECRET ?>" id="<?= CONTACT_FORM_SECRET ?>" value="It's a secret!"/>
+					<input type="submit" value="Submit"/>
+				</div>	
+	</section>
 
-										foreach($row as $row){ ?>							
-											<option><?php echo $row['rescuer_name'] ?></option>
-										<?php } ?>
-										</select>
-							</div>
-							</div>
-						</section>
-						
-						<section class="novel" id="shelters">
-							<h2 class="title">Shelters</h2>
-							<div class="drop">
-							<div class="select-wrapper">
-								<select name="shelter_locations" id="shelter_locations">
-									<option value="">- Shelter locations -</option>
-										<?php
+	<?php include("./inc/footer.php"); ?>
+	<!-- Script -->
+	<script type="text/javascript">
+	$(document).ready(function(){
 
-										$dbh = new PDO('mysql:host=localhost;dbname=animal_rescue', "root", ""); 
-										$row = $dbh->query("select shelter_name from shelter");
+		// Country
+		$('#sel_organization').change(function(){
 
-										foreach($row as $row){ ?>							
-											<option><?php echo $row['shelter_name'] ?></option>
-										<?php } ?>
-										</select>
-								</div>
-								</div>
-							</section>
+			var org_id = $(this).val();
+			// Empty state and city dropdown
+			$('#sel_location').find('option').not(':first').remove();
 
-					</div> <!-- .column-container -->
-			</section>
+			// AJAX request
+			$.ajax({
+				url: 'ajaxfile.php',
+				type: 'post',
+				data: {request: 1, org_id: org_id},
+				dataType: 'json',
+				success: function(response){
+					
+					var len = response.length;
 
-		<?php include("./inc/footer.php"); ?>
+		            for( var i = 0; i<len; i++){
+		               
+		                var name = response[i]['name'];
+		                    
+		                $("#sel_location").append("<option value='"+name+"'>"+name+"</option>");
 
-	</body>
+		            }
+				}
+			});
+			
+		});
+
+
+		
+	});
+	</script>
+
+</body>
 </html>

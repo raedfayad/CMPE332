@@ -33,10 +33,6 @@ function print_header($index = false) {
 			</section>
 	<?php
 	}
-	else {
-		echo '</head>';
-	}
 }
 
 ?>
-

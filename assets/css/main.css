@@ -2307,7 +2307,6 @@
 		opacity: 1;
         height: 25px;
         width: 25px;
-		z-index: -1;
 	}
 
 		input[type="checkbox"] + label,
