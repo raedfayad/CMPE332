@@ -41,22 +41,16 @@
                 // Validate credentials
                 if(empty($username_err) && empty($password_err)){
                     // Prepare a select statement
-                    $sql = "SELECT employee_name FROM employee WHERE employee_name = ?";
-                    
-                    if($stmt = mysqli_prepare($link, $sql)){
+                    if($stmt = $pdo->prepare('SELECT employee_name FROM employee WHERE employee_name = ?')){
                         // Bind variables to the prepared statement as parameters
-                        mysqli_stmt_bind_param($stmt, "s", $param_username);
-                        
-                        // Set parameters
-                        $param_username = $username;
+                       
                         
                         // Attempt to execute the prepared statement
-                        if(mysqli_stmt_execute($stmt)){
+                        if( $stmt->execute([$username])){
                             // Store result
-                            mysqli_stmt_store_result($stmt);
                             
                             // Check if username exists, if yes then verify password
-                            if(mysqli_stmt_num_rows($stmt) == 1){
+                            if( $stmt->fetch()){
                                 // Bind result variables
                                 // Password is correct, so start a new session
                                 session_start();
@@ -77,13 +71,9 @@
                             echo "Oops! Something went wrong. Please try again later.";
                         }
 
-                        // Close statement
-                        mysqli_stmt_close($stmt);
                     }
                 }
                 
-                // Close connection
-                mysqli_close($link);
             }
             ?>
              

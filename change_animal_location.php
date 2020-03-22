@@ -16,9 +16,10 @@
 						<h2>Change Animal Location</h2>
                        
                         <?php
-                            
-                            $mysqli = NEW mysqli('localhost','root','','Animals');
-                            $shelters = $mysqli->query("SELECT shelter_name FROM shelter");
+                            // Include config file
+                            require_once "config.php";
+                            $shelters = $pdo->query("SELECT shelter_name FROM shelter");
+
                             $animal_id = "";
                             $destination_shelter = "";
 
@@ -32,7 +33,7 @@
                             <h1>Select a location that you would like to move the animal to:</h1>
                             <select id="shelters" name="destination" >
                             <?php
-                                while ($rows = $shelters->fetch_assoc()){
+                                while ($rows = $shelters->fetch()){
                                     $shelter_name=$rows['shelter_name'];
                                     echo "<option value='$shelter_name'>$shelter_name</option>";
                                 }
@@ -56,8 +57,10 @@
            
           $animal_id = trim($_POST["animal_id"]);
           $destination_shelter = $_POST["destination"];
-          $result = $mysqli->query("UPDATE animal SET shelter_branch='$destination_shelter', departure_date=CURRENT_DATE WHERE id=$animal_id");
-           if ($result){
+           
+           $stmt =  $pdo->prepare('UPDATE animal SET shelter_branch=?, departure_date=CURRENT_DATE WHERE id=?');
+           $stmt->execute([$destination_shelter, $animal_id]);
+           if ($stmt){
                echo "Successfully sent the following query to the database: UPDATE animal SET shelter_branch='$destination_shelter', departure_date=CURRENT_DATE WHERE id=$animal_id";
            }
            else{
@@ -66,7 +69,7 @@
           
       }
         else{
-            echo "Please an animal id.";
+            echo "Please enter an animal id.";
         }
      
 ?>
