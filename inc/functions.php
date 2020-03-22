@@ -28,7 +28,7 @@ function print_header($index = false) {
 				<h2>Animal Rescue Information Hub<br/></h2>
 				<p>Adopt one today!</p>
 				<ul class="actions">
-					<li><a href="adopt.html" class="button special big">Get Started</a></li>
+					<li><a href="adopt.php" class="button special big">Get Started</a></li>
 				</ul>
 			</section>
 	<?php

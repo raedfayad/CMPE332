@@ -2304,8 +2304,9 @@
 		display: block;
 		float: left;
 		margin-right: -2em;
-		opacity: 0;
-		width: 1em;
+		opacity: 1;
+        height: 25px;
+        width: 25px;
 		z-index: -1;
 	}
 
