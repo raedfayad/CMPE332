@@ -181,6 +181,6 @@ insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '20' , '2019-03
 insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '15' , '2019-04-12' , '20063625', '236734'); 
 insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '30' , '2019-05-12' , '12345678', '483284'); 
 
-insert into donations values ('Bill Gates' , '1200' , '2019-04-12' , 'Kingston SPCA');
-insert into donations values ('John Doe' , '3200' , '2019-05-12' , 'Lost Paws');
-insert into donations values ('Barack Obama' , '1000' , '2019-01-01' , 'Lost and Found');
+insert into donations values ('Bill Gates' , '1200' , '2018-04-12' , 'Kingston SPCA');
+insert into donations values ('John Doe' , '3200' , '2018-05-12' , 'Lost Paws');
+insert into donations values ('Barack Obama' , '1000' , '2018-01-01' , 'Lost and Found');
