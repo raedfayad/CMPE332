@@ -12,7 +12,7 @@ if(isset($_POST['request'])){
 if($request == 1){
 	$orgid = $_POST['org_id'];
 
-	$stmt = $conn->prepare("SELECT * FROM organization WHERE org_type=:org_type ");
+	$stmt = $pdo->prepare("SELECT * FROM organization WHERE org_type=:org_type ");
 	$stmt->bindValue(':org_type', (int)$orgid, PDO::PARAM_INT);
 
 	$stmt->execute();

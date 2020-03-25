@@ -74,7 +74,7 @@
                                     $stmt =  $pdo->prepare('SELECT SUM(amount) FROM donations WHERE YEAR(donation_date)=2018 and org_name =?');
                                     $stmt->execute([$org_name]);
                                     $amount = $stmt->fetch()[0];
-                                    echo "<br><h1>In 2018, $org_name has recieved a total of: 0$amount dollars</h1>";
+                                    echo "<br><h1>In 2018, $org_name has recieved a total of: $$amount dollars</h1>";
                                     
                                 }
                             ?>

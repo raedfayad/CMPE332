@@ -82,6 +82,7 @@
 					<input type="hidden" name="<?= CONTACT_FORM_SECRET ?>" id="<?= CONTACT_FORM_SECRET ?>" value="It's a secret!"/>
 					<input type="submit" value="Submit"/>
 				</div>	
+			</form>
 	</section>
 
 	<?php include("./inc/footer.php"); ?>

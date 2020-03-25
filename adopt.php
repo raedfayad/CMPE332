@@ -27,7 +27,7 @@
 
 			<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
 			
-			<form id="org-form" method="post" action="./org_info.php">
+			<form id="org-form" method="post" action="./animal_info.php">
 				
 				<div class="column-container">
 					
@@ -59,9 +59,9 @@
 
 				</div> <!-- .column-container -->
 				<div class="row separate">
-					<input type="hidden" name="<?= CONTACT_FORM_SECRET ?>" id="<?= CONTACT_FORM_SECRET ?>" value="It's a secret!"/>
 					<input type="submit" value="Submit"/>
 				</div>	
+			</form>
 	</section>
 
 	<?php include("./inc/footer.php"); ?>
