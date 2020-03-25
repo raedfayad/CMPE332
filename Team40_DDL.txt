@@ -128,13 +128,13 @@ insert into organization values ('Kingston SPCA' , '1234' , 'Princess Street', '
 insert into organization values ('Ottawa SPCA' , '2345' , 'Othello Avenue' , 'Ottawa' , 'ON' , 'K1B1D3' , '61323456678',1);
 insert into organization values ('Toronto SPCA' , '1234' , 'Young Street' , 'Toronto' , 'ON' , 'K4J5T9' , '41912345678',1);
 
-insert into organization values ('Lost Paws' , '1234' , 'Division Street' , 'Kingston' , 'ON' , 'K7L3P6' , '6137356696',2) ;
-insert into organization values ('Save the Animals' , '5678' , 'William Road' , 'Kingston' , 'ON' , 'K5R3N0' , '6137371111',2);
-insert into organization values ('Care for Paws' , '2135' , 'Frontenac Drive' , 'Kingston' , 'ON' , 'K7L5R8' , '6137371211',2);
+insert into organization values ('Lost Paws' , '1234' , 'Division Street' , 'Kingston' , 'ON' , 'K7L3P6' , '6137356696',3) ;
+insert into organization values ('Save the Animals' , '5678' , 'William Road' , 'Kingston' , 'ON' , 'K5R3N0' , '6137371111',3);
+insert into organization values ('Care for Paws' , '2135' , 'Frontenac Drive' , 'Kingston' , 'ON' , 'K7L5R8' , '6137371211',3);
 
-insert into organization values ('Lost and Found', '2534' , 'Clergy Street' , 'Kingston' , 'ON' , 'K3L1X4' , '6137771234',3);
-insert into organization values ("Where'd You Go", '345' , 'Wood Street' , 'Kingston' , 'ON' , 'K5P1M4' , '6137891234',3);
-insert into organization values ('Come Back Jack', '128' , 'Humus Street' , 'Kingston' , 'ON' , 'K2N4F0' , '6138881234',3);
+insert into organization values ('Lost and Found', '2534' , 'Clergy Street' , 'Kingston' , 'ON' , 'K3L1X4' , '6137771234',2);
+insert into organization values ("Where'd You Go", '345' , 'Wood Street' , 'Kingston' , 'ON' , 'K5P1M4' , '6137891234',2);
+insert into organization values ('Come Back Jack', '128' , 'Humus Street' , 'Kingston' , 'ON' , 'K2N4F0' , '6138881234',2);
 
 insert into SPCA values ('Kingston SPCA' , '100');
 insert into SPCA values ('Ottawa SPCA' , '100');

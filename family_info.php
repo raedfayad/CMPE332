@@ -26,15 +26,15 @@ $orgid = $_POST['organization'];
 					<form action="adoption_complete.php" method="post">
 					<div class="form-group">
 						<label for="name">Your Last Name</label>
-						<input type="text" id="lname" name="l_name" placeholder="Smith" pattern=[A-Z\sa-z]{3,20} required>
+						<input type="text" id="L_NAME" name="l_name" placeholder="Smith" pattern=[A-Z\sa-z]{3,20} required>
 					</div>
 					<div class="form-group">
 						<label for="name">Your Phone Number</label>
-						<input type="tel" id="phone_num" name="phone_num" placeholder="1234567890" pattern=[0-9]{10} required>
+						<input type="text" id="PHONE_NUM" name="phone_num" placeholder="1234567890" pattern=[0-9]{10} required>
 					</div>
 					<div class="form-group">
 						<label for="name">Street No.</label>
-						<input type="number" id="street_num" name="street_num" placeholder="123" pattern=[0-9]{5} >
+						<input type="text" id="street_num" name="street_num" placeholder="123" pattern=[0-9]{1,5} >
 					</div>
 					<div class="form-group">
 						<label for="name">Street Name</label>
@@ -48,12 +48,13 @@ $orgid = $_POST['organization'];
 						<label for="name">Province</label>
 						<input type="text" id="prov" name="prov" placeholder="ON" pattern=[A-Z\sa-z]{2} >
 					</div> <br>
+					
 			
 					<section class="major special">
 						<?php 
 				
 						if($orgid == 1) {
-							$stmt = $pdo->prepare("SELECT adoption_fee FROM `animal` join `shelter` WHERE id=:id and spca_branch=org_name");
+							$stmt = $pdo->prepare("SELECT adoption_fee FROM `animal` join `spca` WHERE id=:id and spca_branch=org_name");
 							$stmt->bindValue(':id', (int)$id, PDO::PARAM_INT);
 							$stmt->execute();
 							$fee = $stmt->fetch()[0]; 
@@ -64,18 +65,26 @@ $orgid = $_POST['organization'];
 							$stmt->execute();
 							$fee = $stmt->fetch()[0]; 
 						}
-						echo "<br><h3>Please note that you are required to pay an adoption fee of: $<?php echo $orgid </h3>"
+						echo "<br><h3>Please note that you are required to pay an adoption fee of: $ $fee </h3>"
 						
 						?>
 					</section>
-			
+														
+					<input type="hidden" name="id" id="id" value=<?php echo $id ?>/>	
+					
 					<input type="submit" value="Adopt!"/>
+					
 
 					</form>
 					
 			</section>
-
-		<?php include("./inc/footer.php"); ?>
+		
+			
+		
+		<?php
+		
+			
+		include("./inc/footer.php"); ?>
 
 	</body>
 </html>

@@ -85,7 +85,7 @@ $loc = get_string_form_data('locations', $_REQUEST);
 					?>
 					
 					</table>
-					<input type="hidden" name="organization" id="organization" value=<?php $orgid ?>/>
+					<input type="hidden" name="organization" id="organization" value=<?php echo $orgid ?>/><br>
 					<input type="submit" value="Submit"/>
 
 					</form>

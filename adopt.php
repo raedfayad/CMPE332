@@ -58,7 +58,7 @@
 						</section>
 
 				</div> <!-- .column-container -->
-				<div class="row separate">
+				<div class="row separate"><br>
 					<input type="submit" value="Submit"/>
 				</div>	
 			</form>
