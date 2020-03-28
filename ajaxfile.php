@@ -11,19 +11,20 @@ if(isset($_POST['request'])){
 // Fetch state list by countryid
 if($request == 1){
 	$orgid = $_POST['org_id'];
+	if($orgid == 1 or $orgid == 3) {
+		$stmt = $pdo->prepare("SELECT * FROM organization WHERE org_type=:org_type ");
+		$stmt->bindValue(':org_type', (int)$orgid, PDO::PARAM_INT);
 
-	$stmt = $pdo->prepare("SELECT * FROM organization WHERE org_type=:org_type ");
-	$stmt->bindValue(':org_type', (int)$orgid, PDO::PARAM_INT);
+		$stmt->execute();
+		$locationsList = $stmt->fetchAll();
 
-	$stmt->execute();
-	$locationsList = $stmt->fetchAll();
-
-	$response = array();
-	foreach($locationsList as $location){
-		$response[] = array(
-				
-				"name" => $location['org_name']
-			);
+		$response = array();
+		foreach($locationsList as $location){
+			$response[] = array(
+					
+					"name" => $location['org_name']
+				);
+		}
 	}
 
 	echo json_encode($response);

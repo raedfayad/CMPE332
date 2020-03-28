@@ -33,7 +33,10 @@
 			<main>
 			<h2>Helping others is helping yourself - save one today!</h2>
 			
-			<p> lil blurb about project or something </p>
+			<p> The Animal Rescue Information Hub is an organization that helps animals find a home! On our
+			website, adopt a pet, learn more about our donors or look into our associated organizations and branches. 
+			</p>
+			
 			
 			</main>
 			

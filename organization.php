@@ -66,7 +66,7 @@
 					</section>
 					-->
 					<section class="novel" id="locations">
-						<h2 class="title">Shelters</h2>
+						<h2 class="title">Locations</h2>
 						<div class="drop">
 						<div class="select-wrapper">
 							<select name="locations" id="sel_location">
