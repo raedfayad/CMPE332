@@ -1,6 +1,6 @@
 <?php include_once('./inc/functions.php');
 	  include_once('./inc/forms.php');
-	  
+
  ?>
 
 <!DOCTYPE HTML>
@@ -26,18 +26,18 @@
 			</header>
 
 			<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
-			
+
 			<form id="org-form" method="post" action="./animal_info.php">
-				
+
 				<div class="column-container">
-					
+
 					<section class="novel" id="organizations">
 						<h2 class="title">Organization</h2>
 						<div class="drop">
 						<div class="select-wrapper">
-							
-						<select name='organization' id='sel_organization' >
-		          	<option value='0' >Organizations</option>
+
+						<select name='organization' id='sel_organization' required >
+		          	<option value='' >Organizations</option>
 					<option value='1'>SPCA </option>
 					<option value='3'>Shelter </option>
 		        	</select>
@@ -49,9 +49,9 @@
 						<h2 class="title">Shelters</h2>
 						<div class="drop">
 						<div class="select-wrapper">
-							<select name="locations" id="sel_location">
-								<option value="0"> Locations </option>
-									
+							<select name="locations" id="sel_location" required>
+								<option value=""> Locations </option>
+
 							</select>
 							</div>
 							</div>
@@ -60,7 +60,7 @@
 				</div> <!-- .column-container -->
 				<div class="row separate"><br>
 					<input type="submit" value="Submit"/>
-				</div>	
+				</div>
 			</form>
 	</section>
 
@@ -83,23 +83,23 @@
 				data: {request: 1, org_id: org_id},
 				dataType: 'json',
 				success: function(response){
-					
+
 					var len = response.length;
 
 		            for( var i = 0; i<len; i++){
-		               
+
 		                var name = response[i]['name'];
-		                    
+
 		                $("#sel_location").append("<option value='"+name+"'>"+name+"</option>");
 
 		            }
 				}
 			});
-			
+
 		});
 
 
-		
+
 	});
 	</script>
 
