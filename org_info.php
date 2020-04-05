@@ -11,10 +11,10 @@ if (!empty($_POST['rescue_year'])) {
 		$total_rescued = $stmt->fetch()[0];	
 }
 if (!empty($_POST['organization'])) {
-	$orgid = $_POST['organization'];
+	$orgid = get_string_form_data('organization', $_POST);
 }
 if (!empty($_POST['locations'])) {
-	$loc = get_string_form_data('locations', $_REQUEST);
+	$loc = get_string_form_data('locations', $_POST);
 }
 
  ?>
@@ -55,8 +55,8 @@ if (!empty($_POST['locations'])) {
 						<?php
 						if($orgid == 1) {
 						
-							$stmt = $pdo->prepare("SELECT id, animal_type FROM animal WHERE family_name is NULL and spca_branch=:spca_branch");
-							$stmt->bindValue(':spca_branch', (int)$loc, PDO::PARAM_INT);
+							$stmt = $pdo->prepare("SELECT id, animal_type FROM animal WHERE family_name is NULL and shelter_branch is NULL and spca_branch=:spca_branch");
+							$stmt->bindValue(':spca_branch', $loc);
 							$stmt->execute();
 							$animalsList = $stmt->fetchAll();
 
@@ -73,7 +73,7 @@ if (!empty($_POST['locations'])) {
 						elseif($orgid == 3) {
 							
 							$stmt = $conn->prepare("SELECT id, animal_type FROM animal WHERE family_name is NULL and shelter_branch=:shelter_branch");
-							$stmt->bindValue(':shelter_branch', (int)$loc, PDO::PARAM_INT);
+							$stmt->bindValue(':shelter_branch', $loc);
 							$stmt->execute();
 							$animalsList = $stmt->fetchAll();
 

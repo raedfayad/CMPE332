@@ -3,7 +3,7 @@ include_once('inc/functions.php');
 include_once('inc/forms.php');
 include "config.php";
 $orgid = $_POST['organization'];
-$loc = get_string_form_data('locations', $_REQUEST);
+$loc = get_string_form_data('locations', $_POST);
  ?>
 
 <!DOCTYPE HTML>
@@ -41,7 +41,7 @@ $loc = get_string_form_data('locations', $_REQUEST);
 					if($orgid == 1) {
 						
 						$stmt = $pdo->prepare("SELECT id, animal_type FROM animal WHERE family_name is NULL and spca_branch=:spca_branch");
-						$stmt->bindValue(':spca_branch', (int)$loc, PDO::PARAM_INT);
+						$stmt->bindValue(':spca_branch', $loc);
 						$stmt->execute();
 						$animalsList = $stmt->fetchAll();?>
 
@@ -63,7 +63,7 @@ $loc = get_string_form_data('locations', $_REQUEST);
 					if($orgid == 3) {
 						
 						$stmt = $pdo->prepare("SELECT id, animal_type FROM animal WHERE family_name is NULL and shelter_branch=:shelter_branch");
-						$stmt->bindValue(':shelter_branch', (int)$loc, PDO::PARAM_INT);
+						$stmt->bindValue(':shelter_branch', $loc);
 						$stmt->execute();
 						$animalsList = $stmt->fetchAll(); ?>
 

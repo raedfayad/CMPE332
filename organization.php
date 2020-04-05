@@ -36,12 +36,12 @@
 						<div class="drop">
 						<div class="select-wrapper">
 							
-						<select name='organization' id='sel_organization' >
-		          	<option value='0' >Organizations</option>
-					<option value='1'>SPCA </option>
-					<option value='2'>Rescue Organizations </option>
-					<option value='3'>Shelter </option>
-		        	</select>
+						<select name='organization' id='sel_organization' required >
+							<option value='' >Organizations</option>
+							<option value='1'>SPCA </option>
+							<option value='2'>Rescue Organizations </option>
+							<option value='3'>Shelter </option>
+							</select>
 						</div>
 						</div>
 					</section>
@@ -69,8 +69,8 @@
 						<h2 class="title">Locations</h2>
 						<div class="drop">
 						<div class="select-wrapper">
-							<select name="locations" id="sel_location">
-								<option value="0"> Locations </option>
+							<select name="locations" id="sel_location" required>
+								<option value=""> Locations </option>
 									
 							</select>
 							</div>

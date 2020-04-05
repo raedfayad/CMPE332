@@ -25,14 +25,14 @@
             if($_SERVER["REQUEST_METHOD"] == "POST"){
              
                 // Check if username is empty
-                if(empty(trim($_POST["username"]))){
+                if(empty(($_POST["username"]))){
                     $username_err = "Please enter your full name in username field.";
                 } else{
                     $username = trim($_POST["username"]);
                 }
                 
                 // Check if password is empty
-                if(empty(trim($_POST["password"]))){
+                if(empty(($_POST["password"]))){
                     $password_err = "Please enter your password.";
                 } else{
                     $password = trim($_POST["password"]);
@@ -78,14 +78,9 @@
             ?>
              
 
-            <head>
-               <style type="text/css">
-                    body{ font: 14px sans-serif; }
-                    .wrapper{ width: 350px; padding: 20px; }
-                </style>
-            </head>
+            
             <body>
-                <div class="wrapper">
+                <div class="login_wrapper">
                     <h2>Login</h2>
 <p>Please fill in your credentials to login. Try the following credentials; Username: Raed Fayad Password: hello</p>
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -105,10 +100,12 @@
                         </div>
                     </form>
                 </div>
+				
+				<?php include("./inc/footer.php"); ?>
             </body>
             </html>
 
-		<?php include("./inc/footer.php"); ?>
+		
 		
 	</body>
 </html>
