@@ -14,7 +14,7 @@ if(!empty($_POST["locations"])){
 <!DOCTYPE HTML>
 
 <html lang="en">
-<?php print_head("Donations") ?>
+<?php print_head("Donations: Organization Statistics") ?>
 
 	<body>
 		<?php print_header(); ?>
@@ -23,23 +23,18 @@ if(!empty($_POST["locations"])){
 		<!-- Main -->
 			<section id="main" class="wrapper">
 			<div class="container">
-				<header class="major special">
-					<h2> Donations </h2>
-					
+				<header class="major">
+					<h2>Organization Statistics</h2>	
 				</header>
-
-
-				<h2>Lookup Organization Statistics</h2>
 								   
 
 				<form method="post">
 				<div class="column-container">
 				
 					<section class="novel" id="organizations">
-						<h3>Select an organization:</h3>
-						<div class="drop">
-						<div class="select-wrapper">
-							
+						<h3 class= "title">Organization Type</h3>
+						<div class="drop select-wrapper">
+												
 						<select name='organization' id='sel_organization' required>
 							<option value='0' >Organizations</option>
 							<option value='1'>SPCA </option>
@@ -47,23 +42,24 @@ if(!empty($_POST["locations"])){
 							<option value='3'>Shelter </option>
 						</select>
 						</div>
-						</div>
+						
 					</section>
 					
 					<section class="novel" id="locations" required>
 						<h3 class="title">Locations</h3>
-						<div class="drop">
-						<div class="select-wrapper">
-							<select name="locations" id="sel_location">
+						<div class="drop select-wrapper">
+						<select name="locations" id="sel_location">
 								<option value="0"> Locations </option>
 									
 							</select>
 						</div>
-						</div>
+						
 					</section>
 
 				</div> <!-- .column-container -->
-				<input type="submit" value="Submit">
+				<div class="sub">
+					<input type="submit" value="Submit">
+				</div>
 				</form>
 					  
 						<?php
@@ -86,8 +82,9 @@ if(!empty($_POST["locations"])){
 		<!-- Script -->
 		<script type="text/javascript">
 		$(document).ready(doubledropdown('#sel_organization','#sel_location',2));
-		</script>
+		</script>	
 		
-
+    <?php include("./inc/footer.php"); ?>
+	
     </body>
 </html>

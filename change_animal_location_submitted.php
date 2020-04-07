@@ -47,17 +47,18 @@ else {
 	<body>
 		<?php print_header(); ?>
 
-		<header class="major special">
-			<h2>Change Animal Location</h2>
-        </header> 
 		<!-- Main -->
 			<section id="main" class="wrapper">
-				<p><?php echo $message ?> </p>
+				<div class="container">
+				
+					<header class="major">
+						<h2>Change Animal Location</h2>
+					</header> 
+					
+					<p><?php echo $message ?> </p>
+				</div>	
 			</section>
 			
-
-
-
 
     <?php include("./inc/footer.php"); ?>
 

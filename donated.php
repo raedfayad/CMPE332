@@ -21,7 +21,7 @@ if ($count == 0) {
 	$stmt->bindParam(':amount', $amount);
 	$stmt->execute();
 	$message = "Thank you for donating!";
-	$img = "<a href='#' class='image fit'><img src='images/guinea-pig.jpg' alt='' /></a>";
+	$img = "<a href='#' class='image half'><img src='images/guinea-pig.jpg' alt='' /></a>";
 	
 }
 else {
@@ -38,18 +38,22 @@ else {
 
 	<body>
 		<?php print_header(); ?>
-	<header class="major special">
-		<h2> Donations </h2>
-	</header>
+	
 
 	<!-- Main -->
 		<section id="main" class="wrapper">
 			<div class="container">
+				<header class=" major minor">
+					<h2> Donations </h2>
+				</header>
 				  
-				<p> <?php echo $message ?> </p>
+				<p id="message"> <?php echo $message ?> </p>
 				<?php echo $img ?> 
 					 
 			</div>
 		</section>
+		
+		<?php include("./inc/footer.php"); ?>
+		
     </body>
 </html>

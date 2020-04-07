@@ -20,11 +20,13 @@ if (!empty($_POST['rescue_org'])) {
 	<body>
 		<?php print_header(); ?>
 
-		<header class="major special">
-			<h2>Driver Information</h2>
-        </header> 
 		<!-- Main -->
-			<section id="main" class="wrapper">
+		<section id="main" class="wrapper">
+			<div class="container">
+			
+			<header class="major">
+				<h2>Driver Information</h2>
+			</header> 
 				<p> Select a rescue organization you would like to see driver information on: </p>
 					<form id = "rescue-form" method="post">
 					
@@ -41,15 +43,17 @@ if (!empty($_POST['rescue_org'])) {
 								<?php } ?>
 							</select>
 							
-							<input type="submit" value="Submit"/>
+							<div class="sub">
+								<input type="submit" value="Submit"/>
+							</div>
 							</form>
 							<?php 
 							
 					
 					if (!empty($_POST['rescue_org']) )  {
 					?>		
-						<p>Information about drivers located at <?php echo $rescue_org ?></p>
-						<table>
+						<p>Information about drivers located at <?php echo $rescue_org ?>:</p>
+						<table class="output">
 							<thead>
 								<tr>
 									<th>Name</th>
@@ -75,6 +79,7 @@ if (!empty($_POST['rescue_org'])) {
 					} ?>
 					</tbody>
 					</table>
+				</div>
 			</section>
 			
 

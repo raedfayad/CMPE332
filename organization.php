@@ -61,7 +61,7 @@
 						</section>
 
 				</div> <!-- .column-container -->
-				<div class="row separate">
+				<div class="row">
 					<input type="submit" value="Submit"/>
 				</div>	
 			</form>
@@ -71,12 +71,6 @@
 
 	<script type="text/javascript">
 	$(document).ready(doubledropdown('#sel_organization','#sel_location',1));
-	
-	
-	
-	
-	
-
 	</script>
 
 </body>

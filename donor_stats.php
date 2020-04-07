@@ -20,7 +20,7 @@ if(!empty($_POST["donator_name"])){
 <!DOCTYPE HTML>
 
 <html lang="en">
-<?php print_head("Donations") ?>
+<?php print_head("Donations: Donor Statistics") ?>
 
 	<body>
 		<?php print_header(); ?>
@@ -29,17 +29,18 @@ if(!empty($_POST["donator_name"])){
 		<!-- Main -->
 		<section id="main" class="wrapper">
 			<div class="container">
-				<header class="major special">
-					<h2> Donations </
+				<header class="major">
+					<h2> Donor Statistics </h2>
 				</header>
-					
-				<h2>Lookup Donor Statistics</h2>
-				   
+				
 
 				<form method="post">
-				  <h1>Enter Donor Name: (Try Bill Gates)</h1>
+				  <label for="donator_name"> Enter Donor Name: (Try Bill Gates)</label>
 					<input type="text" name="donator_name" value="" required />
-					<input type="submit" value="Submit"/>
+					
+					<div class="sub">
+						<input type="submit" value="Submit"/>
+					</div>
 				</form>
 				<br>
 					
@@ -69,5 +70,8 @@ if(!empty($_POST["donator_name"])){
 						
 			</div>	
 		</section>
+		
+		<?php include("./inc/footer.php"); ?>
+		
 	</body>
 </html>

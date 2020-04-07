@@ -3,6 +3,7 @@ include_once('inc/functions.php');
 include_once('inc/forms.php');
 include "config.php";
 $total_rescued = "";
+$not_rescue = 0;
 if (!empty($_POST['rescue_year'])) {
 		$year = $_POST['rescue_year'];
 		$stmt = $pdo->prepare("SELECT count(id) as rescuedAnimals FROM animal WHERE driver_name is not null and YEAR(departure_date)=:year");
@@ -17,6 +18,10 @@ if (!empty($_POST['locations'])) {
 	$loc = get_string_form_data('locations', $_POST);
 }
 
+if (!empty($_POST['not-rescue'])) {
+	$not_rescue = get_string_form_data('not-rescue', $_POST);
+}
+
  ?>
 
 <!DOCTYPE HTML>
@@ -29,22 +34,25 @@ if (!empty($_POST['locations'])) {
 
 
 		<!-- Main -->
-			<section id="main" class="wrapper">
-				
+		<section id="main" class="wrapper">
+			<div class="container">	
 
-					<header class="major special">
-						<h2>Organizations</h2>
-						
+					<header class="major">
+						<h2>Organizations</h2>	
 					</header>
-
-					<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
+					<!---
+					<form id="shelter-only">
 					
-					<section>
+						 <div class="6u$ 12u$(small)">
+							<input type="checkbox" id="not-rescue" name="not-rescue" >
+							<label for="human">Animals that did not go through a rescue organization</label>
+						</div> 
+					</form> --->
 					
 					<?php 
-					if($orgid == 1 or $orgid == 3) { ?>
+					if($not_rescue == 0 ) { ?>
 						<p>Information about animals located at <?php echo $loc ?></p>
-						<table>
+						<table class="output">
 							<thead>
 								<tr>
 									<th>Animal ID</th>
@@ -67,7 +75,6 @@ if (!empty($_POST['locations'])) {
 							foreach($animalsList as $animal){ ?>
 								<tr>
 								<td><?php echo $animal['id'] ?></td>
-								<td><?php echo $animal['animal_type'] ?></td>
 								<td><?php echo $animal['animal_type'] ?></td>
 								<td><?php echo $animal['arrival_date'] ?></td>
 								</tr>
@@ -102,13 +109,11 @@ if (!empty($_POST['locations'])) {
 					</tbody>	
 					</table>
 					<?php
-					}		
-					
-					
+					}
 					?>
-					</section>
 					
-			</section>
+			</div>		
+		</section>
 
 		<?php require("./inc/footer.php"); ?>
 

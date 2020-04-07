@@ -12,31 +12,33 @@ require_once "config.php";
 	<body>
 		<?php print_header(); ?>
 
-		<header class="major special">
-			<h2>Change Animal Location</h2>
-        </header> 
+		
 		<!-- Main -->
-			<section id="main" class="wrapper">
+		<section id="main" class="wrapper">
+			<div class="container">
+			
+				<header class="major">
+				<h2>Change Animal Location</h2>
+				</header> 
+			
+			
 				<form id = "employeeform" name="employeeform" method = "post" >
 					<h2 class="title">Select an option:</h2>
-					<div class="drop">
-					<div class="select-wrapper">
+					<div class="drop select-wrapper">
 						
-					<select name='sel_employee' id='sel_employee' required >
-						<option value=''> </option>
-						<option value='1'>Lookup Driver Information</option>
-						<option value='2'>Change Animal Location</option>
-						
+						<select name='sel_employee' id='sel_employee' required >
+							<option value=''> </option>
+							<option value='1'>Lookup Driver Information</option>
+							<option value='2'>Change Animal Location</option>
 						</select>
 					</div>
+					
+					<div class="sub">
+						<input type="submit" value="Submit"/>
 					</div>
-					<input type="submit" value="Submit"/>
 				</form>	
-			</section>
-			
-
-
-
+			</div>
+		</section>
 
     <?php include("./inc/footer.php"); ?>
 

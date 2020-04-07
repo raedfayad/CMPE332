@@ -19,38 +19,36 @@ $orgid = $_POST['organization'];
 			<section id="main" class="wrapper">
 				<div class="container">
 
-					<header class="major special">
+					<header class="major">
 						<h2>Family Contact Information</h2>
 					</header>
 					
 					<form action="adoption_complete.php" method="post">
 					<div class="form-group">
-						<label for="name">Your Last Name</label>
+						<label for="l_name">Your Last Name</label>
 						<input type="text" id="L_NAME" name="l_name" placeholder="Smith" pattern=[A-Z\sa-z]{3,20} required>
 					</div>
 					<div class="form-group">
-						<label for="name">Your Phone Number</label>
+						<label for="phone_num">Your Phone Number</label>
 						<input type="text" id="PHONE_NUM" name="phone_num" placeholder="1234567890" pattern=[0-9]{10} required>
 					</div>
 					<div class="form-group">
-						<label for="name">Street No.</label>
+						<label for="street_num">Street No.</label>
 						<input type="text" id="street_num" name="street_num" placeholder="123" pattern=[0-9]{1,5} >
 					</div>
 					<div class="form-group">
-						<label for="name">Street Name</label>
+						<label for="street_name">Street Name</label>
 						<input type="text" id="street_name" name="street_name" placeholder="Main St." pattern=[A-Z\sa-z]{3,30} >
 					</div>
 					<div class="form-group">
-						<label for="name">City</label>
+						<label for="city">City</label>
 						<input type="text" id="city" name="city" placeholder="Kingston" pattern=[A-Z\sa-z]{3,20} >
 					</div>
 					<div class="form-group">
-						<label for="name">Province</label>
+						<label for="prov">Province</label>
 						<input type="text" id="prov" name="prov" placeholder="ON" pattern=[A-Z\sa-z]{2} >
-					</div> <br>
+					</div> 
 					
-			
-					<section class="major special">
 						<?php 
 				
 						if($orgid == 1) {
@@ -64,16 +62,18 @@ $orgid = $_POST['organization'];
 							$stmt->bindValue(':id', (int)$id, PDO::PARAM_INT);
 							$stmt->execute();
 							$fee = $stmt->fetch()[0]; 
-						}
-						echo "<br><h3>Please note that you are required to pay an adoption fee of: $ $fee </h3>"
-						
+						} 
 						?>
-					</section>
-														
+						
+						<div id="between">
+						<h3>Please note that you are required to pay an adoption fee of: $ $fee </h3>
+						</div>
+								
 					<input type="hidden" name="id" id="id" value=<?php echo $id ?>/>	
 					
-					<input type="submit" value="Adopt!"/>
-					
+					<div class="sub">
+						<input type="submit" value="Adopt!"/>
+					</div>
 
 					</form>
 					

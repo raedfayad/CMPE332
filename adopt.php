@@ -27,7 +27,7 @@
 
 			<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
 
-			<form id="org-form" method="post" action="./animal_info.php">
+			<form id="adopt-form" method="post" action="./animal_info.php">
 
 				<div class="column-container">
 
@@ -58,7 +58,7 @@
 						</section>
 
 				</div> <!-- .column-container -->
-				<div class="row separate"><br>
+				<div class="row">
 					<input type="submit" value="Submit"/>
 				</div>
 			</form>

@@ -54,7 +54,7 @@ $stmt->execute();
 
 					</header>
 					<a href="#" class="image fit"><img src="images/dog_cat_1.jpg" alt="" /></a>
-
+				</div>
 			</section>
 
 		<?php include("./inc/footer.php"); ?>

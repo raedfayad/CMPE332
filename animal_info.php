@@ -19,13 +19,13 @@ $loc = get_string_form_data('locations', $_POST);
 			<section id="main" class="wrapper">
 				<div class="container">
 
-					<header class="major special">
+					<header class="major">
 						<h2>Animals Available at <?php echo $loc ?></h2>
 					</header>
 
 					<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
 					<p>Please select the animal that you would like to adopt from <?php echo $loc ?></p>
-					<section>
+					
 
 					<table>
 						<thead>
@@ -47,13 +47,19 @@ $loc = get_string_form_data('locations', $_POST);
 							</tr>
 							</thead>
 							<tbody> 
+							<form method="post" action="family_info.php">	
 							<?php
 							foreach($animalsList as $animal){ ?>
 								<tr>
-								<td><?php echo $animal['id'] ?></td>
-								<td><?php echo $animal['animal_type'] ?></td>
-								<td><?php echo $animal['animal_type'] ?></td>
-								<td><?php echo $animal['arrival_date'] ?></td>
+									<td>
+										<div class="AnimalRadio">
+											<input type="radio" id=<?php echo $animal['id'] ?> name="animal_id" value=<?php echo $animal['id'] ?>>
+											<label> </label>
+										</div>
+									</td>
+									<td><?php echo $animal['id'] ?></td>
+									<td><?php echo $animal['animal_type'] ?></td>
+									<td><?php echo $animal['arrival_date'] ?></td>
 								</tr>
 							<?php 
 							} 
@@ -61,7 +67,7 @@ $loc = get_string_form_data('locations', $_POST);
 					
 						elseif($orgid == 3) {
 							
-							$stmt = $conn->prepare("SELECT * WHERE family_name is NULL and shelter_branch=:shelter_branch");
+							$stmt = $pdo->prepare("SELECT * FROM animal WHERE family_name is NULL and shelter_branch=:shelter_branch");
 							$stmt->bindValue(':shelter_branch', $loc);
 							$stmt->execute();
 							$animalsList = $stmt->fetchAll();
@@ -71,6 +77,7 @@ $loc = get_string_form_data('locations', $_POST);
 							</tr>
 							</thead>
 							<tbody> 
+							<form method="post" action="family_info.php">	
 							<?php
 						foreach($animalsList as $animal){ ?>
 											<tr>
@@ -82,16 +89,19 @@ $loc = get_string_form_data('locations', $_POST);
 												</td>
 											<td><?php echo $animal['id'] ?></td>
 											<td><?php echo $animal['animal_type'] ?></td>
+											<td><?php echo $animal['arrival_date'] ?></td>
+											<td><?php echo $animal['departure_date'] ?></td>
 											</tr>
 										<?php }										
 					}
 					?>
 					</tbody>
 					</table>
-					<input type="hidden" name="organization" id="organization" value=<?php echo $orgid ?>/><br>
+					<input type="hidden" name="organization" id="organization" value=<?php echo $orgid ?>/>
 					<input type="submit" value="Submit"/>
 
 					</form>
+				</div>
 			</section>
 
 		<?php include("./inc/footer.php"); ?>
