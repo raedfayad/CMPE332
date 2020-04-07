@@ -26,13 +26,13 @@ if ($count == 0){
 	$stmt->bindParam(':province', $province);
 	$stmt->execute();
 }
-
+else {
 $stmt = $pdo->prepare('UPDATE animal SET family_name=:last_name, family_num=:phone_num WHERE id=:id');
 $stmt->bindParam(':last_name', $last_name);
 $stmt->bindParam(':phone_num', $phone_num);
 $stmt->bindParam(':id', $id);
 $stmt->execute();
-
+}
 ?>
 
 

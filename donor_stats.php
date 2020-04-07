@@ -38,7 +38,7 @@ if(!empty($_POST["donator_name"])){
 
 				<form method="post">
 				  <h1>Enter Donor Name: (Try Bill Gates)</h1>
-					<input type="text" name="donator_name" value=""/>
+					<input type="text" name="donator_name" value="" required />
 					<input type="submit" value="Submit"/>
 				</form>
 				<br>

@@ -65,42 +65,10 @@
 	</section>
 
 	<?php include("./inc/footer.php"); ?>
+	
 	<!-- Script -->
 	<script type="text/javascript">
-	$(document).ready(function(){
-
-		// Country
-		$('#sel_organization').change(function(){
-
-			var org_id = $(this).val();
-			// Empty state and city dropdown
-			$('#sel_location').find('option').not(':first').remove();
-
-			// AJAX request
-			$.ajax({
-				url: 'ajaxfile.php',
-				type: 'post',
-				data: {request: 1, org_id: org_id},
-				dataType: 'json',
-				success: function(response){
-
-					var len = response.length;
-
-		            for( var i = 0; i<len; i++){
-
-		                var name = response[i]['name'];
-
-		                $("#sel_location").append("<option value='"+name+"'>"+name+"</option>");
-
-		            }
-				}
-			});
-
-		});
-
-
-
-	});
+	$(document).ready(doubledropdown('#sel_organization','#sel_location',1));
 	</script>
 
 </body>

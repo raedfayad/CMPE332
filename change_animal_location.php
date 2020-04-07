@@ -1,41 +1,38 @@
-<?php include_once('./inc/functions.php');
- require_once "config.php";
+<?php 
+include_once('./inc/functions.php');
+require_once "config.php";
 $shelters = $pdo->query("SELECT shelter_name FROM shelter");
-
-$animal_id = "";
-$destination_shelter = "";
+$animals = $pdo->query("select id from animal where shelter_branch is NULL and family_name is NULL order by id");								
  ?>
 
 <html lang="en">
-<?php print_head("Employee Terminal") ?>
+<?php print_head("Employee Terminal: Change Animal Location") ?>
 <head>
-<script src="js/script.js" type="text/javascript"></script>
+
 </head>
 	<body>
 		<?php print_header(); ?>
 
-
+		<header class="major special">
+			<h2>Change Animal Location</h2>
+		</header> 
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
 
-					<header class="major special">
-						<h2>Change Animal Location</h2>
-                    </header> 
 							
-					<form method="post">
+					<form method="post" action="./change_animal_location_submitted.php">
 						<h1>Select an animal ID:</h1>
-						<select name="animal_id">
-							<option value="">IDs</option>
+						<select name="animal_id" required>
+							<option value="">IDs</>
 								<?php
-								$row = $pdo->query("select id from animal where shelter_branch is NULL and family_name is NULL");
-								foreach($row as $row){ ?>							
-									<option><?php echo $row['id'] ?></option>
+								foreach($animals as $animal){ ?>							
+									<option><?php echo $animal['id'] ?></option>
 								<?php } ?>
 						</select>
 						
-						<h1>Select a location that you would like to move the animal to:</h1>
-						<select id="shelters" name="destination" >
+						<h1>Select a shelter that you would like to move the animal to:</h1>
+						<select id="shelters" name="destination" required>
 						<?php
 							while ($rows = $shelters->fetch()){
 								$shelter_name=$rows['shelter_name'];
@@ -45,46 +42,35 @@ $destination_shelter = "";
 						</select>
 						
 						<h1> Was this animal rescued? </h1>
-						<select id='rescued'>
+						<select name="rescued" id='rescued' required>
 							<option value = ""> </option>
 							<option value= "Yes">Yes</option>
 							<option value= "No">No</option>
 						</select>
 						
-						<h1> If rescued, please enter the driver name: </h1>
-						<input type="text" name="driver" id="driver">
+						<h1> If rescued, please select the rescue organization used and driver: </h1>
+						<select name="rescue_names" id="rescue_names">
+							<option value="">Rescue Organizations</option>
+								<?php
+								$orgs = $pdo->query("select rescuer_name from rescuer");
+								foreach($orgs as $org){ ?>							
+									<option value="<?php echo $org[0] ?>" > <?php echo $org['rescuer_name'] ?></option>
+								<?php } ?>
+						</select>
+						<select name="driver" id="driver">
+							<option value="">Driver Name</option>
+								
+						</select>
 						
 				
 					<input type="submit" value="Submit">
 					</form>
                         
 			</section>
+			<script type="text/javascript">
+			$(document).ready(doubledropdown('#rescue_names','#driver',3));
+			</script>
 
-
-
-
-<?php
-
-       if(!empty(($_POST["animal_id"]))){
-           
-          $animal_id = $_POST["animal_id"];
-          $destination_shelter = $_POST["destination"];
-           
-           $stmt =  $pdo->prepare('UPDATE animal SET shelter_branch=?, departure_date=CURRENT_DATE WHERE id=?');
-           $stmt->execute([$destination_shelter, $animal_id]);
-           if ($stmt){
-               echo "Successfully sent the following query to the database: UPDATE animal SET shelter_branch='$destination_shelter', departure_date=CURRENT_DATE WHERE id=$animal_id";
-           }
-           else{
-               echo "Server Error: please ensure you have entered a valid animal id.";
-           }
-          
-      }
-        else{
-            echo "Please enter an animal id.";
-        }
-     
-?>
 
     <?php include("./inc/footer.php"); ?>
 

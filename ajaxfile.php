@@ -10,7 +10,7 @@ if(isset($_POST['request'])){
 
 // Fetch state list by countryid
 if($request == 1){
-	$orgid = $_POST['org_id'];
+	$orgid = $_POST['post_id'];
 	if($orgid == 1 or $orgid == 3) {
 		$stmt = $pdo->prepare("SELECT * FROM organization WHERE org_type=:org_type ");
 		$stmt->bindValue(':org_type', (int)$orgid, PDO::PARAM_INT);
@@ -22,11 +22,53 @@ if($request == 1){
 		foreach($locationsList as $location){
 			$response[] = array(
 					
-					"name" => $location['org_name']
+					"var_name" => $location['org_name']
 				);
 		}
 	}
 
+	echo json_encode($response);
+	exit;
+}
+
+if($request == 2){
+	$orgid = $_POST['post_id'];
+	
+	$stmt = $pdo->prepare("SELECT * FROM organization WHERE org_type=:org_type ");
+	$stmt->bindValue(':org_type', (int)$orgid, PDO::PARAM_INT);
+
+	$stmt->execute();
+	$locationsList = $stmt->fetchAll();
+
+	$response = array();
+	foreach($locationsList as $location){
+		$response[] = array(
+					
+			"var_name" => $location['org_name']
+	);
+	}
+	
+	echo json_encode($response);
+	exit;
+}
+
+if($request == 3){
+	$rescue_name = $_POST['post_id'];
+	
+	$stmt = $pdo->prepare("SELECT * FROM driver WHERE rescuer_org=:rescuer_org ");
+	$stmt->bindValue(':rescuer_org', $rescue_name);
+
+	$stmt->execute();
+	$locationsList = $stmt->fetchAll();
+
+	$response = array();
+	foreach($locationsList as $location){
+		$response[] = array(
+					
+			"var_name" => $location['name']
+	);
+	}
+	
 	echo json_encode($response);
 	exit;
 }

@@ -40,7 +40,7 @@ if(!empty($_POST["locations"])){
 						<div class="drop">
 						<div class="select-wrapper">
 							
-						<select name='organization' id='sel_organization' >
+						<select name='organization' id='sel_organization' required>
 							<option value='0' >Organizations</option>
 							<option value='1'>SPCA </option>
 							<option value='2'>Rescue Organizations </option>
@@ -50,7 +50,7 @@ if(!empty($_POST["locations"])){
 						</div>
 					</section>
 					
-					<section class="novel" id="locations">
+					<section class="novel" id="locations" required>
 						<h3 class="title">Locations</h3>
 						<div class="drop">
 						<div class="select-wrapper">
@@ -83,42 +83,11 @@ if(!empty($_POST["locations"])){
 		</section>
 		
 		
-			<!-- Script -->
-	<script type="text/javascript">
-	$(document).ready(function(){
-
-		// Country
-		$('#sel_organization').change(function(){
-
-			var org_id = $(this).val();
-			// Empty state and city dropdown
-			$('#sel_location').find('option').not(':first').remove();
-
-			// AJAX request
-			$.ajax({
-				url: 'ajaxfile.php',
-				type: 'post',
-				data: {request: 2, org_id: org_id},
-				dataType: 'json',
-				success: function(response){
-					
-					var len = response.length;
-
-		            for( var i = 0; i<len; i++){
-		               
-		                var name = response[i]['name'];
-		                    
-		                $("#sel_location").append("<option value='"+name+"'>"+name+"</option>");
-
-		            }
-				}
-			});
-			
-		});
-
-
+		<!-- Script -->
+		<script type="text/javascript">
+		$(document).ready(doubledropdown('#sel_organization','#sel_location',2));
+		</script>
 		
-	});
-	</script>
+
     </body>
 </html>

@@ -2,7 +2,7 @@
 include_once('inc/functions.php');
 include_once('inc/forms.php');
 include "config.php";
-$id = get_string_form_data('animal_id', $_REQUEST);
+$id = get_string_form_data('animal_id', $_POST);
 $orgid = $_POST['organization'];
  ?>
 

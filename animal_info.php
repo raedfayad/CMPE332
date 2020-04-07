@@ -33,42 +33,45 @@ $loc = get_string_form_data('locations', $_POST);
 								<th>Selection</th>
 								<th>Animal ID</th>
 								<th>Animal Type</th>
+								<th>Arrival Date at SPCA location</th>
+							 
+						<?php
+						if($orgid == 1) {
+						
+							$stmt = $pdo->prepare("SELECT id, animal_type, arrival_date FROM animal WHERE family_name is NULL and shelter_branch is NULL and spca_branch=:spca_branch");
+							$stmt->bindValue(':spca_branch', $loc);
+							$stmt->execute();
+							$animalsList = $stmt->fetchAll();
+
+							?>
 							</tr>
-						</thead>
-						<tbody>
-						
-					<?php
-					if($orgid == 1) {
-						
-						$stmt = $pdo->prepare("SELECT id, animal_type FROM animal WHERE family_name is NULL and spca_branch=:spca_branch");
-						$stmt->bindValue(':spca_branch', $loc);
-						$stmt->execute();
-						$animalsList = $stmt->fetchAll();?>
-
-						<form method="post" action="family_info.php">						
-						<?php
-						foreach($animalsList as $animal){ ?>
-											<tr>
-												<td>
-													<div class="AnimalRadio">
-														<input type="radio" id=<?php echo $animal['id'] ?> name="animal_id" value=<?php echo $animal['id'] ?>>
-														<label></label>
-													</div>
-												</td>
-											<td><?php echo $animal['id'] ?></td>
-											<td><?php echo $animal['animal_type'] ?></td>
-											</tr>
-										<?php }				
-					}
-					if($orgid == 3) {
-						
-						$stmt = $pdo->prepare("SELECT id, animal_type FROM animal WHERE family_name is NULL and shelter_branch=:shelter_branch");
-						$stmt->bindValue(':shelter_branch', $loc);
-						$stmt->execute();
-						$animalsList = $stmt->fetchAll(); ?>
-
-						<form method="post" action="family_info.php">						
-						<?php
+							</thead>
+							<tbody> 
+							<?php
+							foreach($animalsList as $animal){ ?>
+								<tr>
+								<td><?php echo $animal['id'] ?></td>
+								<td><?php echo $animal['animal_type'] ?></td>
+								<td><?php echo $animal['animal_type'] ?></td>
+								<td><?php echo $animal['arrival_date'] ?></td>
+								</tr>
+							<?php 
+							} 
+						}
+					
+						elseif($orgid == 3) {
+							
+							$stmt = $conn->prepare("SELECT * WHERE family_name is NULL and shelter_branch=:shelter_branch");
+							$stmt->bindValue(':shelter_branch', $loc);
+							$stmt->execute();
+							$animalsList = $stmt->fetchAll();
+							
+							?>
+							<th>Departure Date from SPCA location</th>
+							</tr>
+							</thead>
+							<tbody> 
+							<?php
 						foreach($animalsList as $animal){ ?>
 											<tr>
 												<td>
@@ -83,7 +86,7 @@ $loc = get_string_form_data('locations', $_POST);
 										<?php }										
 					}
 					?>
-					
+					</tbody>
 					</table>
 					<input type="hidden" name="organization" id="organization" value=<?php echo $orgid ?>/><br>
 					<input type="submit" value="Submit"/>

@@ -3,10 +3,8 @@
 <!DOCTYPE HTML>
 
 <html lang="en">
-<?php print_head("Employee Terminal") ?>
-<head>
-<script src="js/script.js" type="text/javascript"></script>
-</head>
+<?php print_head("Donations") ?>
+
 	<body>
 		<?php print_header(); ?>
 
@@ -21,12 +19,12 @@
                         
                        
 						<form id = "myform" name="myform" method = "post" >
-							<section class="novel" id="organizations">
+							
 							<h2 class="title">Select an option:</h2>
 							<div class="drop">
 							<div class="select-wrapper">
 								
-							<select name='organization' id='sel_donate' required >
+							<select name='sel_donate' id='sel_donate' required >
 								<option value=''> </option>
 								<option value='1'>Lookup Donor Statistics</option>
 								<option value='2'>Lookup Organization Statistics</option>
@@ -35,7 +33,7 @@
 							</div>
 							</div>
 							<input type="submit" value="Submit"/>
-							</section>
+							
 						</form>
 						 
 				</div>

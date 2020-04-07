@@ -1,3 +1,6 @@
+CREATE DATABASE animal_rescue;
+USE animal_rescue;
+
 create table organization (
 	org_name varchar(40) not null primary key,
 	street_num varchar(5) not null,
@@ -131,15 +134,15 @@ insert into organization values ('Whitby SPCA' , '578' , 'Anderson Street' , 'Wh
 
 insert into organization values ('Lost Paws' , '1234' , 'Division Street' , 'Kingston' , 'ON' , 'K7L3P6' , '6137356696',3) ;
 insert into organization values ('Save the Animals' , '5678' , 'William Road' , 'Kingston' , 'ON' , 'K5R3N0' , '6137371111',3);
-insert into organization values ('Care for Paws' , '2135' , 'Frontenac Drive' , 'Kingston' , 'ON' , 'K7L5R8' , '6137371211',3);
+insert into organization values ('Care for Paws' , '2135' , 'Frontenac Drive' , 'Ottawa' , 'ON' , 'K7L5R8' , '6137371211',3);
 insert into organization values ('Paws Placement' , '15' , 'Banderson Drive' , 'Toronto' , 'ON' , 'L1R5R8' , '6137373331',3);
-insert into organization values ('Save-A-Pet' , '35' , 'Dewborne Drive' , 'Whitby' , 'ON' , 'L1R5A8' , '2897371211',3);
+insert into organization values ('Save-A-Pet' , '35' , 'Dewbourne Drive' , 'Kingston' , 'ON' , 'L1R5A8' , '2897371211',3);
 
-insert into organization values ('Lost and Found', '2534' , 'Clergy Street' , 'Kingston' , 'ON' , 'K3L1X4' , '6137771234',2);
+insert into organization values ('Lost and Found', '2534' , 'Clergy Street' , 'Ottawa' , 'ON' , 'K3L1X4' , '6137771234',2);
 insert into organization values ('Pets-R-Us', '345' , 'Wood Street' , 'Kingston' , 'ON' , 'K5P1M4' , '6137891234',2);
 insert into organization values ('Come Back Jack', '128' , 'Humus Street' , 'Kingston' , 'ON' , 'K2N4F0' , '6138881234',2);
 insert into organization values ('Pet Movers', '128' , 'Bruke Street' , 'Kingston' , 'ON' , 'K2N5A2' , '2898881234',2);
-insert into organization values ('Pets-On-The-Go', '128' , 'Chips Street' , 'Kingston' , 'ON' , 'K2N2I9' , '4338881234',2);
+insert into organization values ('Pets-On-The-Go', '128' , 'Chips Street' , 'Whitby' , 'ON' , 'K2N2I9' , '4338881234',2);
 
 insert into SPCA values ('Kingston SPCA' , '100');
 insert into SPCA values ('Ottawa SPCA' , '75');
@@ -152,25 +155,30 @@ insert into shelter values ('Care for Paws' , '120' , 'careforpaws.org');
 insert into shelter values ('Paws Placement' , '100' , 'pawsplacement.org');
 insert into shelter values ('Save-A-Pet' , '130' , 'saveapet.org');
 
-insert into shelter_info values ('Lost Paws' , 'Dogs' , '30');
-insert into shelter_info values ('Lost Paws' , 'Cats' , '20');
-insert into shelter_info values ('Lost Paws' , 'Rabbits' , '5');
+insert into shelter_info values ('Lost Paws' , 'Dog' , '30');
+insert into shelter_info values ('Lost Paws' , 'Cat' , '20');
+insert into shelter_info values ('Lost Paws' , 'Rabbit' , '5');
+insert into shelter_info values ('Lost Paws' , 'Rodent' , '10');
 
-insert into shelter_info values ('Save the Animals' , 'Dogs' , '20');
-insert into shelter_info values ('Save the Animals' , 'Cats' , '15');
-insert into shelter_info values ('Save the Animals' , 'Rabbits' , '15');
+insert into shelter_info values ('Save the Animals' , 'Dog' , '20');
+insert into shelter_info values ('Save the Animals' , 'Cat' , '15');
+insert into shelter_info values ('Save the Animals' , 'Rabbit' , '15');
+insert into shelter_info values ('Save the Animals' , 'Rodent' , '20');
 
-insert into shelter_info values ('Care for Paws' , 'Dogs' , '20');
-insert into shelter_info values ('Care for Paws' , 'Cats' , '15');
-insert into shelter_info values ('Care for Paws' , 'Rabbits' , '15');
+insert into shelter_info values ('Care for Paws' , 'Dog' , '20');
+insert into shelter_info values ('Care for Paws' , 'Cat' , '15');
+insert into shelter_info values ('Care for Paws' , 'Rabbit' , '15');
+insert into shelter_info values ('Care for Paws' , 'Rodent' , '5');
 
-insert into shelter_info values ('Paws Placement' , 'Dogs' , '25');
-insert into shelter_info values ('Paws Placement' , 'Cats' , '20');
-insert into shelter_info values ('Paws Placement' , 'Rabbits' , '15');
+insert into shelter_info values ('Paws Placement' , 'Dog' , '25');
+insert into shelter_info values ('Paws Placement' , 'Cat' , '20');
+insert into shelter_info values ('Paws Placement' , 'Rabbit' , '15');
+insert into shelter_info values ('Paws Placement' , 'Rodent' , '15');
 
-insert into shelter_info values ('Save-A-Pet' , 'Dogs' , '15');
-insert into shelter_info values ('Save-A-Pet' , 'Cats' , '15');
-insert into shelter_info values ('Save-A-Pet' , 'Rabbits' , '4');
+insert into shelter_info values ('Save-A-Pet' , 'Dog' , '15');
+insert into shelter_info values ('Save-A-Pet' , 'Cat' , '15');
+insert into shelter_info values ('Save-A-Pet' , 'Rabbit' , '4');
+insert into shelter_info values ('Save-A-Pet' , 'Rodent' , '10');
 
 
 insert into rescuer values ('Lost and Found');
@@ -180,18 +188,18 @@ insert into rescuer values ('Pet Movers');
 insert into rescuer values ('Pets-On-The-Go');
 
 insert into employee values ('Raed Fayad' , '160' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X1' , '6134005960' , 'Lost Paws');
-insert into employee values ('Irum Shah' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '4193452314' , 'Care for Paws');
+insert into employee values ('Irum Shah' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '4193452314' , 'Kingston SPCA');
 insert into employee values ('Laure Halabi' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '4192341567' , 'Save the Animals');
-insert into employee values ('Clarie Leung' , '160' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X1' , '1234567890' , 'Lost Paws');
-insert into employee values ('Adam Sandler' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '2345678901' , 'Care for Paws');
-insert into employee values ('Mike Hanagan' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '3423124566' , 'Save the Animals');
-insert into employee values ('Ross Geller' , '160' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X1' , '4567351223' , 'Lost Paws');
-insert into employee values ('Pheobe Buffay' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '5837174264' , 'Care for Paws');
-insert into employee values ('Jennifer Aniston' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '9704864762' , 'Save the Animals');
+insert into employee values ('Clarie Leung' , '050' , 'Rideau Street' , 'Ottawa' , 'ON' , 'K1N 9J7' , '1234567890' , 'Lost and Found');
+insert into employee values ('Adam Sandler' , '004' , 'Bay Street' , 'Toronto' , 'ON' , 'K7L3X5' , '2345678901' , 'Toronto SPCA');
+insert into employee values ('Mike Hanagan' , '394' , 'Queen Street' , 'Toronto' , 'ON' , 'M5V 2A6' , '3423124566' , 'Paws Placement');
+insert into employee values ('Ross Geller' , '675' , 'Somerset Street' , 'Ottawa' , 'ON' , 'K1R6P3' , '4567351223' , 'Care for Paws');
+insert into employee values ('Pheobe Buffay' , '145' , 'Dundas Street' , 'Whitby' , 'ON' , 'L1N2N1' , '5837174264' , 'Whitby SPCA');
+insert into employee values ('Jennifer Aniston' , '430' , 'Taunton Road' , 'Whitby' , 'ON' , 'L1R3A2' , '9704864762' , 'Pets-On-The-Go');
 
 insert into owner values ('Raed Fayad' , 'Lost Paws');
 insert into owner values ('Laure Halabi' , 'Save the Animals');
-insert into owner values ('Irum Shah' , 'Care for Paws');
+insert into owner values ('Irum Shah' , 'Kingston SPCA');
 
 insert into family values ('Mitchel' , '6132528873' , '222' , 'Knox Road' , 'Ottawa' , 'ON');
 insert into family values ('Nicol' , '7248975463' , '333' , 'Boomer Road' , 'Ottawa' , 'ON');
