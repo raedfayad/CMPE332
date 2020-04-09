@@ -53,6 +53,24 @@ if($request == 2){
 }
 
 if($request == 3){
+	$rescued = $_POST['post_id'];
+	if ($rescued == 'Yes') {
+		$orgs = $pdo->query("select rescuer_name from rescuer");
+
+		$response = array();
+		foreach($orgs as $org){
+			$response[] = array(
+						
+				"var_name" => $org[0]
+		);
+		}
+	
+	echo json_encode($response);
+	exit;
+	}
+}
+
+if($request == 4){
 	$rescue_name = $_POST['post_id'];
 	
 	$stmt = $pdo->prepare("SELECT * FROM driver WHERE rescuer_org=:rescuer_org ");

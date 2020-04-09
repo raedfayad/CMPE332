@@ -53,7 +53,7 @@ $stmt->execute();
 						<h2>Congratulations! You have adopted a pet!</h2>
 
 					</header>
-					<a href="#" class="image fit"><img src="images/dog_cat_1.jpg" alt="" /></a>
+					<a href="#" class="image half"><img class="child" src="images/dog_cat_1.jpg" alt="" /></a>
 				</div>
 			</section>
 

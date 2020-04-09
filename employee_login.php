@@ -98,7 +98,7 @@
                         </div>
                         
 						<div class="sub">
-                            <input type="submit" class="btn btn-primary" value="Login">
+                            <input type="submit" value="Login">
                         </div>
                     </form>
                 </div>

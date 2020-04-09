@@ -21,12 +21,12 @@ if ($count == 0) {
 	$stmt->bindParam(':amount', $amount);
 	$stmt->execute();
 	$message = "Thank you for donating!";
-	$img = "<a href='#' class='image half'><img src='images/guinea-pig.jpg' alt='' /></a>";
+	$img = "<a href='#' class='image half'><img class='child' src='images/guinea-pig.jpg' alt='' /></a>";
 	
 }
 else {
-	$message = "Sorry, you've already donated to this organization today. Try again tomorrow, or donate to a different organization!";
-	$img = "<a href='#' class='image fit'><img src='images/sad-animal.jpg' alt='' /></a>";
+	$message = "Sorry, you've already donated to this organization today. Try again tomorrow, or <a href='donate.php'> donate to a different organization!</a>";
+	$img = "<a href='#' class='image half'><img class= 'child' src='images/sad-animal.jpg' alt='' /></a>";
 	
 }
 ?>
@@ -48,8 +48,10 @@ else {
 				</header>
 				  
 				<p id="message"> <?php echo $message ?> </p>
-				<?php echo $img ?> 
-					 
+				<div >
+				
+					<?php echo $img ?> 
+				</div>	 
 			</div>
 		</section>
 		

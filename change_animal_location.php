@@ -67,11 +67,7 @@ $animals = $pdo->query("select id from animal where shelter_branch is NULL and f
 							<div class="select-wrapper">
 							<select name="rescue_names" id="rescue_names">
 								<option value="">Rescue Organizations</option>
-									<?php
-									$orgs = $pdo->query("select rescuer_name from rescuer");
-									foreach($orgs as $org){ ?>							
-										<option value="<?php echo $org[0] ?>" > <?php echo $org['rescuer_name'] ?></option>
-									<?php } ?>
+									
 							</select>
 							</div>
 						</div>
@@ -91,7 +87,8 @@ $animals = $pdo->query("select id from animal where shelter_branch is NULL and f
                         
 			</section>
 			<script type="text/javascript">
-			$(document).ready(doubledropdown('#rescue_names','#driver',3));
+			$(document).ready(doubledropdown('#rescued','#rescue_names',3));
+			$(document).ready(doubledropdown('#rescue_names','#driver',4));
 			</script>
 
 

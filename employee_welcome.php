@@ -18,7 +18,7 @@ require_once "config.php";
 			<div class="container">
 			
 				<header class="major">
-				<h2>Change Animal Location</h2>
+				<h2>Employee Terminal</h2>
 				</header> 
 			
 			

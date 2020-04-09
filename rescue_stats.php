@@ -13,14 +13,16 @@ include "config.php";
 
 	<body>
 		<?php print_header(); ?>
-		<header class="major special">
-			<h2>Rescue Statistics</h2>
-			
-		</header>
+		
 		<!-- Main -->
 		<section id="main" class="wrapper">
 				<div class="container">
-					<h2> The following table shows how many animals were rescued by all </h2>
+					
+					<header class="major special">
+						<h2>Rescue Statistics</h2>
+					</header>
+
+					<p class="below_header"> The following table shows how many animals were rescued by all rescue organizations:</p>
 						
 					<table>
 					<thead>

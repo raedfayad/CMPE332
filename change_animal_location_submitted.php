@@ -55,7 +55,7 @@ else {
 						<h2>Change Animal Location</h2>
 					</header> 
 					
-					<p><?php echo $message ?> </p>
+					<p class="below_header"><?php echo $message ?> </p>
 				</div>	
 			</section>
 			

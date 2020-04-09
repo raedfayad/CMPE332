@@ -2,8 +2,24 @@
 include_once('inc/functions.php');
 include_once('inc/forms.php');
 include "config.php";
+
 $orgid = $_POST['organization'];
 $loc = get_string_form_data('locations', $_POST);
+if($orgid == 1) {			
+		$stmt = $pdo->prepare("SELECT id, animal_type, arrival_date FROM animal WHERE family_name is NULL and shelter_branch is NULL and spca_branch=:spca_branch order by animal_type");
+		$stmt->bindValue(':spca_branch', $loc);
+		$stmt->execute();
+		$animalsList = $stmt->fetchAll();
+	}
+elseif($orgid == 3) {			
+	$stmt = $pdo->prepare("SELECT * FROM animal WHERE family_name is NULL and shelter_branch=:shelter_branch order by animal_type");
+	$stmt->bindValue(':shelter_branch', $loc);
+	$stmt->execute();
+	$animalsList = $stmt->fetchAll();
+}	
+$count = count($animalsList);
+
+
  ?>
 
 <!DOCTYPE HTML>
@@ -23,26 +39,22 @@ $loc = get_string_form_data('locations', $_POST);
 						<h2>Animals Available at <?php echo $loc ?></h2>
 					</header>
 
-					<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->
-					<p>Please select the animal that you would like to adopt from <?php echo $loc ?></p>
 					
-
-					<table>
-						<thead>
-							<tr>
-								<th>Selection</th>
-								<th>Animal ID</th>
-								<th>Animal Type</th>
-								<th>Arrival Date at SPCA location</th>
 							 
+					<?php
+					if ($count > 0) { ?>
+						<p class="below_header">Please select the animal that you would like to adopt: </p>
+				
+
+						<table>
+							<thead>
+								<tr>
+									<th>Selection</th>
+									<th>Animal ID</th>
+									<th>Animal Type</th>
+									<th>Arrival Date at SPCA location</th>
 						<?php
 						if($orgid == 1) {
-						
-							$stmt = $pdo->prepare("SELECT id, animal_type, arrival_date FROM animal WHERE family_name is NULL and shelter_branch is NULL and spca_branch=:spca_branch");
-							$stmt->bindValue(':spca_branch', $loc);
-							$stmt->execute();
-							$animalsList = $stmt->fetchAll();
-
 							?>
 							</tr>
 							</thead>
@@ -66,12 +78,6 @@ $loc = get_string_form_data('locations', $_POST);
 						}
 					
 						elseif($orgid == 3) {
-							
-							$stmt = $pdo->prepare("SELECT * FROM animal WHERE family_name is NULL and shelter_branch=:shelter_branch");
-							$stmt->bindValue(':shelter_branch', $loc);
-							$stmt->execute();
-							$animalsList = $stmt->fetchAll();
-							
 							?>
 							<th>Departure Date from SPCA location</th>
 							</tr>
@@ -93,7 +99,7 @@ $loc = get_string_form_data('locations', $_POST);
 											<td><?php echo $animal['departure_date'] ?></td>
 											</tr>
 										<?php }										
-					}
+						}
 					?>
 					</tbody>
 					</table>
@@ -101,6 +107,15 @@ $loc = get_string_form_data('locations', $_POST);
 					<input type="submit" value="Submit"/>
 
 					</form>
+					<?php
+					}
+					else { ?>
+					
+					<p class="below_header">Sorry there are no animals available at this location. <a href='adopt.php'> Try another location here. </a> </p>
+						
+					<?php 
+					} 
+					?>
 				</div>
 			</section>
 

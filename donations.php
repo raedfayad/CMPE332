@@ -20,7 +20,7 @@
                        
 						<form id = "myform" name="myform" method = "post" >
 							
-							<h2 class="title">Select an option:</h2>
+							<h2 class="title bh">Select an option:</h2>
 							<div class="drop select-wrapper">
 							
 							<select name='sel_donate' id='sel_donate' required >

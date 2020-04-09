@@ -19,14 +19,15 @@ $orgs = $pdo->query("SELECT org_name FROM organization order by org_type");
 			<div class="container">
 				<header class="major">
 					<h2> Donations </h2>
-					<p> Donate Today or take a look at our donation records </p>
 				</header>
 					
 				   
-				<p> Fill out the form accordingly to donate! </p>
+				<p class="below_header"> Fill out the form accordingly to donate! </p>
 				<form id = "donate-form" method="post" action="donated.php">
-					<div class="form-group">
+					
+					<div class="form-group drop">
 						<label> Organization donating to:</label>
+						<div class="select-wrapper">
 						<select name="org_donate" id="org_donate" required>
 							<option value="">Organizations</option>
 						<?php	
@@ -35,6 +36,7 @@ $orgs = $pdo->query("SELECT org_name FROM organization order by org_type");
 								
 						<?php } ?>
 						</select>
+						</div>
 					</div>
 					
 					<div class="form-group">

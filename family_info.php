@@ -66,7 +66,7 @@ $orgid = $_POST['organization'];
 						?>
 						
 						<div id="between">
-						<h3>Please note that you are required to pay an adoption fee of: $ $fee </h3>
+						<h3>Please note that you are required to pay an adoption fee of: $<?php echo $fee ?> </h3>
 						</div>
 								
 					<input type="hidden" name="id" id="id" value=<?php echo $id ?>/>	

@@ -24,7 +24,7 @@
 
 			<header class="major special">
 				<h2>Organizations</h2>
-				<p>Choose a location to see the animals located there and their information:</p>
+				<p>Choose a type of organization to see the animals at their locations or their statistics (Rescue) </p>
 			</header>
 
 			<!-- <a href="#" class="image fit"><img src="images/pic01.jpg" alt="" /></a> -->

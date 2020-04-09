@@ -13,7 +13,7 @@ if (!empty($_POST['rescue_org'])) {
 ?>
 
 <html lang="en">
-<?php print_head("Employee Terminal:Driver Information") ?>
+<?php print_head("Employee Terminal: Driver Information") ?>
 <head>
 
 </head>
@@ -27,7 +27,7 @@ if (!empty($_POST['rescue_org'])) {
 			<header class="major">
 				<h2>Driver Information</h2>
 			</header> 
-				<p> Select a rescue organization you would like to see driver information on: </p>
+				<p class=" bh below_header"> Select a rescue organization you would like to see driver information on: </p>
 					<form id = "rescue-form" method="post">
 					
 						<select name="rescue_org" id="rescue_org" required>

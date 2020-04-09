@@ -190,96 +190,145 @@ insert into rescuer values ('Pets-On-The-Go');
 insert into employee values ('Raed Fayad' , '160' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X1' , '6134005960' , 'Lost Paws');
 insert into employee values ('Irum Shah' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '4193452314' , 'Kingston SPCA');
 insert into employee values ('Laure Halabi' , '300' , 'Nelson Street' , 'Kingston' , 'ON' , 'K7L3X5' , '4192341567' , 'Save the Animals');
+insert into employee values ('Jan Levenison' , '023' , 'Albert Street' , 'Kingston' , 'ON' , 'K7L3E4' , '4193972314' , 'Come Back Jack');
+
 insert into employee values ('Clarie Leung' , '050' , 'Rideau Street' , 'Ottawa' , 'ON' , 'K1N 9J7' , '1234567890' , 'Lost and Found');
+insert into employee values ('Erin Hannon' , '682' , 'Aylmer Avenue' , 'Ottawa' , 'ON' , 'K1S SR4' , '6137304272' , 'Ottawa SPCA');
+insert into employee values ('Ross Geller' , '675' , 'Somerset Street' , 'Ottawa' , 'ON' , 'K1R6P3' , '4567351223' , 'Care for Paws');
+insert into employee values ('Ashley Frangipane' , '200' , 'Tremblay Road' , 'Ottawa' , 'ON' , 'K1SG 3H5' , '6135074272' , 'Pet Movers');
+
 insert into employee values ('Adam Sandler' , '004' , 'Bay Street' , 'Toronto' , 'ON' , 'K7L3X5' , '2345678901' , 'Toronto SPCA');
 insert into employee values ('Mike Hanagan' , '394' , 'Queen Street' , 'Toronto' , 'ON' , 'M5V 2A6' , '3423124566' , 'Paws Placement');
-insert into employee values ('Ross Geller' , '675' , 'Somerset Street' , 'Ottawa' , 'ON' , 'K1R6P3' , '4567351223' , 'Care for Paws');
+insert into employee values ('Michael Scott' , '500' , 'Kingston Road' , 'Toronto' , 'ON' , 'M4L1V3' , '4166948464' , 'Pets-R-Us');
+
 insert into employee values ('Pheobe Buffay' , '145' , 'Dundas Street' , 'Whitby' , 'ON' , 'L1N2N1' , '5837174264' , 'Whitby SPCA');
 insert into employee values ('Jennifer Aniston' , '430' , 'Taunton Road' , 'Whitby' , 'ON' , 'L1R3A2' , '9704864762' , 'Pets-On-The-Go');
+insert into employee values ('Jim Halpert' , '145' , 'Garden Street' , 'Whitby' , 'ON' , 'L1R2N4' , '5844174564' , 'Save-A-Pet');
+
+
 
 insert into owner values ('Raed Fayad' , 'Lost Paws');
 insert into owner values ('Laure Halabi' , 'Save the Animals');
 insert into owner values ('Irum Shah' , 'Kingston SPCA');
+insert into owner values ('Michael Scott', 'Pets-R-Us');
 
 insert into family values ('Mitchel' , '6132528873' , '222' , 'Knox Road' , 'Ottawa' , 'ON');
 insert into family values ('Nicol' , '7248975463' , '333' , 'Boomer Road' , 'Ottawa' , 'ON');
 insert into family values ('Beamish' , '6137371111' , '120' , 'Division Road' , 'Kingston' , 'ON');
+insert into family values ('Leung' , '1234567890' , '050' , 'Rideau Street' , 'Ottawa' , 'ON');
+insert into family values ('Smith' , '6477073458' , '180' , 'Division Road' , 'Kingston' , 'ON');
+insert into family values ('Martin' , '9052134003' , '144' , 'University Avenue' , 'Toronto' , 'ON');
 
 insert into driver values ('Mike Travis' , '6132325544' , 'H12345678910' , 'BZKL321' , 'Lost and Found');
-insert into driver values ('Aliyah Davis' , '4172167879' , 'H43215678910' , 'BJKL921' , 'Pets-R-Us');
-insert into driver values ('James Bond' , '4197777007' , 'H08978675645' , 'BNJL273' , 'Come Back Jack');
-insert into driver values ('Rachel Green' , '6132325544' , 'H12345678910' , 'BZKL321' , 'Pet Movers');
-insert into driver values ('Derek Sheppard' , '4172167879' , 'H43215678910' , 'BJKL921' , 'Pets-On-The-Go');
-insert into driver values ('Addy Hannon' , '6132325544' , 'H12345678910' , 'BZKL321' , 'Lost and Found');
-insert into driver values ('Beth Cooper' , '4172167879' , 'H43215678910' , 'BJKL921' , 'Pets-R-Us');
-insert into driver values ('Monica Geller' , '4197777007' , 'H08978675645' , 'BNJL273' , 'Come Back Jack');
-insert into driver values ('Joey Tribinani' , '6132325544' , 'H12345678910' , 'BZKL321' , 'Pet Movers');
-insert into driver values ('Paul Winegui' , '4172167879' , 'H43215678910' , 'BJKL921' , 'Pets-On-The-Go');
-insert into driver values ('Courtney Cox' , '6132325544' , 'H12345678910' , 'BZKL321' , 'Lost and Found');
-insert into driver values ('David Beckham' , '4172167879' , 'H43215678910' , 'BJKL921' , 'Pets-R-Us');
-insert into driver values ('Megan Fox' , '4197777007' , 'H08978675645' , 'BNJL273' , 'Come Back Jack');
-insert into driver values ('Shia Laboeuf' , '6132325544' , 'H12345678910' , 'BZKL321' , 'Pet Movers');
-insert into driver values ('Lady Gaga' , '4172167879' , 'H43215678910' , 'BJKL921' , 'Pets-On-The-Go');
-insert into driver values ('Matt LeBlanc' , '4197777007' , 'H08978675645' , 'BNJL273' , 'Come Back Jack');
+insert into driver values ('Aliyah Davis' , '4172164239' , 'H43567278910' , 'BJKL343' , 'Pets-R-Us');
+insert into driver values ('James Bond' , '4197772347' , 'H01238675645' , 'BNJM283' , 'Come Back Jack');
+insert into driver values ('Rachel Green' , '6233235544' , 'H19095678910' , 'BCKL303' , 'Pet Movers');
+insert into driver values ('Derek Sheppard' , '4142167879' , 'H67675678910' , 'AJKL921' , 'Pets-On-The-Go');
+insert into driver values ('Addy Hannon' , '6123325544' , 'H74835678910' , 'BZML306' , 'Lost and Found');
+insert into driver values ('Beth Cooper' , '5463167879' , 'H67371678910' , 'BJML242' , 'Pets-R-Us');
+insert into driver values ('Monica Geller' , '4143223007' , 'H08978671234' , 'BKJL273' , 'Come Back Jack');
+insert into driver values ('Joey Tribinani' , '6123455544' , 'H12345674252' , 'CZKL322' , 'Pet Movers');
+insert into driver values ('Paul Winegui' , '4172165779' , 'H43215677848' , 'BAKL992' , 'Pets-On-The-Go');
+insert into driver values ('Courtney Cox' , '6132789444' , 'H12345683938' , 'BWXKL441' , 'Lost and Found');
+insert into driver values ('David Beckham' , '4189067879' , 'H43215678491' , 'JQLH921' , 'Pets-R-Us');
+insert into driver values ('Megan Fox' , '4197790907' , 'H08978677838' , 'BNKL233' , 'Come Back Jack');
+insert into driver values ('Shia Laboeuf' , '6190905544' , 'H12345632310' , 'BZK9021' , 'Pet Movers');
+insert into driver values ('Lady Gaga' , '4172142429' , 'H43215632423' , 'HJKL906' , 'Pets-On-The-Go');
+insert into driver values ('Matt LeBlanc' , '4195467007' , 'H08973343645' , 'CMJL253' , 'Come Back Jack');
 
 insert into animal values ('10000000' , 'Dog' , '2019-12-01' , '2020-01-15' , 'Ottawa SPCA' , null, null, 'Mitchel' , '6132528873');
-insert into animal values ('10101101' , 'Dog' , '2019-03-12' , '2020-01-14' , 'Ottawa SPCA' , null, null, 'Nicol' , '7248975463');
-insert into animal values ('11000000' , 'Dog' , '2019-06-20' , '2020-01-05' , 'Kingston SPCA' , null, null , 'Beamish' , '6137371111');
+insert into animal values ('10101101' , 'Rodent' , '2019-03-12' , '2020-01-14' , 'Ottawa SPCA' , null, null, 'Nicol' , '7248975463');
+insert into animal values ('11000000' , 'Rabbit' , '2019-06-20' , '2020-01-05' , 'Kingston SPCA' , null, null , 'Beamish' , '6137371111');
+insert into animal values ('12345678' , 'Rodent' , '2018-02-28' , '2018-03-28' , 'Kingston SPCA' , null , null , 'Smith', '6477073458');
+insert into animal values ('23416241' , 'Cat' , '2018-04-11' , '2018-05-12' , 'Whitby SPCA' , 'Lost Paws' , 'David Beckham' , 'Leung', '1234567890');
+insert into animal values ('54346313' , 'Dog' , '2018-08-15' , '2018-09-03' , 'Ottawa SPCA' , 'Save-A-Pet' , 'Paul Winegui' , 'Leung', '1234567890');
+insert into animal values ('45235423' , 'Cat' , '2018-10-12' , '2018-12-12' , 'Toronto SPCA' , 'Paws Placement' , 'Courtney Cox' , 'Martin', '9052134003');
 
-insert into animal values ('12345678' , 'Dog' , '2019-02-28' , '' , 'Kingston SPCA' , null , null , null, null);
-insert into animal values ('23468174' , 'Dog' , '2019-03-28' , '' , 'Kingston SPCA' , null , null , null, null);
+insert into animal values ('12345666' , 'Dog' , '2020-02-28' , '' , 'Kingston SPCA' , null , null , null, null);
+insert into animal values ('23468174' , 'Dog' , '2020-03-20' , '' , 'Kingston SPCA' , null , null , null, null);
 
-insert into animal values ('23416241' , 'Dog' , '2019-04-12' , '' , 'Whitby SPCA' , null , null , null, null);
+insert into animal values ('23416242' , 'Dog' , '2019-04-12' , '' , 'Whitby SPCA' , null , null , null, null);
 insert into animal values ('32521463' , 'Cat' , '2019-01-11' , '' , 'Whitby SPCA' , null , null , null, null);
 insert into animal values ('45273927' , 'Rabbit' , '2019-05-06' , '' , 'Whitby SPCA' , null , null , null, null);
 insert into animal values ('31451941' , 'Dog' , '2019-01-13' , '' , 'Whitby SPCA' , null , null , null, null);
-insert into animal values ('54543453' , 'Rabbit' , '2019-05-06' , '' , 'Whitby SPCA' , null , null , null, null);
+insert into animal values ('54543452' , 'Rabbit' , '2019-05-06' , '' , 'Whitby SPCA' , null , null , null, null);
 insert into animal values ('67678764' , 'Dog' , '2019-01-13' , '' , 'Whitby SPCA' , null , null , null, null);
+insert into animal values ('54543453' , 'Rabbit' , '2019-05-06' , '' , 'Whitby SPCA' , null , null , null, null);
+insert into animal values ('67678763' , 'Dog' , '2019-02-13' , '' , 'Whitby SPCA' , null , null , null, null);
 
-insert into animal values ('54346313' , 'Dog' , '2019-04-12' , '' , 'Ottawa SPCA' , null , null , null, null);
+
+insert into animal values ('54346312' , 'Dog' , '2019-04-12' , '' , 'Ottawa SPCA' , null , null , null, null);
 insert into animal values ('36764345' , 'Cat' , '2019-01-11' , '' , 'Ottawa SPCA' , null , null , null, null);
 insert into animal values ('56487833' , 'Rabbit' , '2019-04-12' , '' , 'Ottawa SPCA' , null , null , null, null);
 insert into animal values ('36534524' , 'Cat' , '2019-01-11' , '' , 'Ottawa SPCA' , null , null , null, null);
 insert into animal values ('98767855' , 'Dog' , '2019-04-12' , '' , 'Ottawa SPCA' , null , null , null, null);
 insert into animal values ('99900552' , 'Cat' , '2019-01-11' , '' , 'Ottawa SPCA' , null , null , null, null);
+insert into animal values ('98767854' , 'Rodent' , '2019-12-12' , '' , 'Ottawa SPCA' , null , null , null, null);
+insert into animal values ('99900559' , 'Rodent' , '2019-01-11' , '' , 'Ottawa SPCA' , null , null , null, null);
 
-insert into animal values ('45235423' , 'Dog' , '2019-04-12' , '' , 'Toronto SPCA' , null , null , null, null);
+insert into animal values ('45235424' , 'Dog' , '2019-04-12' , '' , 'Toronto SPCA' , null , null , null, null);
 insert into animal values ('43513462' , 'Cat' , '2019-01-11' , '' , 'Toronto SPCA' , null , null , null, null);
-insert into animal values ('45678345' , 'Dog' , '2019-04-12' , '' , 'Toronto SPCA' , null , null , null, null);
+insert into animal values ('45678345' , 'Dog' , '2019-04-10' , '' , 'Toronto SPCA' , null , null , null, null);
 insert into animal values ('12346735' , 'Cat' , '2019-01-11' , '' , 'Toronto SPCA' , null , null , null, null);
 insert into animal values ('87959323' , 'Dog' , '2019-04-12' , '' , 'Toronto SPCA' , null , null , null, null);
 insert into animal values ('53954525' , 'Cat' , '2019-01-11' , '' , 'Toronto SPCA' , null , null , null, null);
+insert into animal values ('87959329' , 'Rodent' , '2019-07-12' , '' , 'Toronto SPCA' , null , null , null, null);
+insert into animal values ('53954523' , 'Rodent' , '2019-06-11' , '' , 'Toronto SPCA' , null , null , null, null);
 
-insert into animal values ('20063625' , 'Dog' , '2019-02-28' , '2019-04-02' , 		'Kingston SPCA' , 'Lost Paws' , 'Mike Travis', null , null);
+insert into animal values ('20063625' , 'Dog' , '2018-02-28' , '2018-04-02' , 		'Kingston SPCA' , 'Lost Paws' , 'Mike Travis', null , null);
 insert into animal values ('63939293' , 'Rabbit' , '2019-03-28' , '2019-04-05' , 	'Kingston SPCA' , 'Lost Paws' , 'Aliyah Davis', null , null);
-insert into animal values ('80221512' , 'Cat' , '2019-04-28' , '2019-04-06' , 		'Kingston SPCA' , 'Lost Paws' , 'James Bond', null , null);
+insert into animal values ('80221512' , 'Cat' , '2019-04-28' , '2019-05-09' , 		'Kingston SPCA' , 'Lost Paws' , 'James Bond', null , null);
+insert into animal values ('80221562' , 'Rodent' , '2019-07-20' , '2019-08-01' , 	'Kingston SPCA' , 'Lost Paws' , 'James Bond', null , null);
 
-insert into animal values ('12233311' , 'Dog' , '2019-02-28' , '2019-04-02' , 		'Toronto SPCA' , 'Save the Animals' , 'Mike Travis', null , null);
+insert into animal values ('12233311' , 'Dog' , '2018-02-28' , '2018-04-02' , 		'Toronto SPCA' , 'Save the Animals' , 'Mike Travis', null , null);
 insert into animal values ('65434653' , 'Rabbit' , '2019-03-28' , '2019-04-05' , 	'Toronto SPCA' , 'Save the Animals' , 'Aliyah Davis', null , null);
-insert into animal values ('54245268' , 'Cat' , '2019-04-28' , '2019-04-06' , 		'Toronto SPCA' , 'Save the Animals' , 'James Bond', null , null);
+insert into animal values ('54245268' , 'Cat' , '2019-04-28' , '2019-05-06' , 		'Toronto SPCA' , 'Save the Animals' , 'James Bond', null , null);
+insert into animal values ('12346736' , 'Rodent' , '2018-02-01' , '2018-04-01',         'Toronto SPCA' , 'Save the Animals', null , null, null);
 
-insert into animal values ('65435346' , 'Dog' , '2019-02-28' , '2019-04-02' , 		'Whitby SPCA' , 'Care for Paws' , 'Mike Travis', null , null);
+insert into animal values ('65435346' , 'Dog' , '2018-02-08' , '2018-03-05' , 		'Whitby SPCA' , 'Care for Paws' , 'Mike Travis', null , null);
 insert into animal values ('87568647' , 'Rabbit' , '2019-03-28' , '2019-04-05' , 	'Ottawa SPCA' , 'Care for Paws' , 'Aliyah Davis', null , null);
-insert into animal values ('79575867' , 'Cat' , '2019-04-28' , '2019-04-06' , 		'Kingston SPCA' , 'Care for Paws' , 'James Bond', null , null);
+insert into animal values ('79575867' , 'Cat' , '2019-02-28' , '2019-04-06' , 		'Kingston SPCA' , 'Care for Paws' , 'James Bond', null , null);
+insert into animal values ('79575855' , 'Rodent' , '2018-04-28' , '2018-04-06' , 	'Kingston SPCA' , 'Care for Paws' , 'James Bond', null , null);
 
-insert into animal values ('86487648' , 'Dog' , '2019-02-28' , '2019-04-02' , 		'Toronto SPCA' , 'Paws Placement' , 'Mike Travis', null , null);
-insert into animal values ('75765373' , 'Rabbit' , '2019-03-28' , '2019-04-05' , 	'Ottawa SPCA' , 'Paws Placement' , 'Aliyah Davis', null , null);
-insert into animal values ('75375375' , 'Cat' , '2019-04-28' , '2019-04-06' , 		'Ottawa SPCA' , 'Paws Placement' , 'James Bond', null , null);
+insert into animal values ('86487648' , 'Dog' , '2018-06-28' , '2018-08-02' , 		'Toronto SPCA' , 'Paws Placement' , 'Mike Travis', null , null);
+insert into animal values ('75765373' , 'Rabbit' , '2018-03-28' , '2019-04-05' , 	'Ottawa SPCA' , 'Paws Placement' , 'Aliyah Davis', null , null);
+insert into animal values ('75375375' , 'Cat' , '2019-04-01' , '2019-04-06' , 		'Ottawa SPCA' , 'Paws Placement' , 'James Bond', null , null);
+insert into animal values ('75375344' , 'Rodent' , '2018-03-28' , '2018-04-06' , 	'Ottawa SPCA' , 'Paws Placement' , 'Megan Fox', null , null);
+insert into animal values ('75375379' , 'Cat' , '2020-01-01' , '2019-01-28' , 		'Ottawa SPCA' , 'Paws Placement' , 'Lady Gaga', null , null);
 
-insert into animal values ('65432563' , 'Dog' , '2019-02-28' , '2019-04-02' , 		'Toronto SPCA' , 'Save-A-Pet' , 'Mike Travis', null , null);
+insert into animal values ('65432563' , 'Dog' , '2018-05-28' , '2018-06-02' , 		'Toronto SPCA' , 'Save-A-Pet' , 'Mike Travis', null , null);
 insert into animal values ('64364662' , 'Rabbit' , '2019-03-28' , '2019-04-05' , 	'Ottawa SPCA' , 'Save-A-Pet' , 'Aliyah Davis', null , null);
-insert into animal values ('77774532' , 'Cat' , '2019-04-28' , '2019-04-06' , 		'Ottawa SPCA' , 'Save-A-Pet' , 'James Bond', null , null);
+insert into animal values ('77774532' , 'Cat' , '2019-03-01' , '2019-04-06' , 		'Ottawa SPCA' , 'Save-A-Pet' , 'James Bond', null , null);
+insert into animal values ('36534522' , 'Rodent' , '2020-01-01' , '2020-03-01' ,        'Ottawa SPCA' , 'Care for Paws' , 'Megan Fox' , null, null);
 
 insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '20' , '2019-03-12' , '10000000', '123456');
 insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '15' , '2019-04-12' , '20063625', '236734');
 insert into vet_visit values ('Karen Rudie' , 'Annual checkup' , '30' , '2019-05-12' , '12345678', '483284');
 
 insert into donations values ('Bill Gates' , '1200' , '2018-04-12' , 'Kingston SPCA');
+insert into donations values ('Bill Gates' , '1000' , '2018-06-20' , 'Ottawa SPCA');
+insert into donations values ('Bill Gates' , '1500' , '2018-08-12' , 'Whitby SPCA');
+insert into donations values ('Bill Gates' , '1400' , '2018-09-12' , 'Toronto SPCA');
+insert into donations values ('Jimin Park' , '12000' , '2018-04-12' , 'Kingston SPCA');
+insert into donations values ('Taehyung Kim' , '15000' , '2018-04-12' , 'Whitby SPCA');
+insert into donations values ('Justin Trudeau' , '32000' , '2018-05-12' , 'Toronto SPCA');
+insert into donations values ('Taylor Swift' , '1200' , '2019-04-12' , 'Ottawa SPCA');
+
 insert into donations values ('John Doe' , '3200' , '2018-05-12' , 'Lost Paws');
-insert into donations values ('Barack Obama' , '1000' , '2019-01-01' , 'Lost and Found');
-insert into donations values ('Donald Trump' , '15000' , '2019-04-12' , 'Whitby SPCA');
-insert into donations values ('Justin Trudeau' , '32000' , '2019-05-12' , 'Toronto SPCA');
-insert into donations values ('Rihanna' , '10000' , '2020-01-01' , 'Save the Animals');
-insert into donations values ('Taylor Swift' , '1200' , '2020-04-12' , 'Ottawa SPCA');
+insert into donations values ('Taehyung Kim' , '15000' , '2019-04-12' , 'Lost Paws');
+insert into donations values ('Rihanna' , '10000' , '2018-01-01' , 'Save the Animals');
+insert into donations values ('Rihanna' , '10000' , '2019-01-01' , 'Save the Animals');
 insert into donations values ('Lisa Kudrow' , '3200' , '2019-05-12' , 'Save-A-Pet');
+insert into donations values ('Pam Beesly' , '3000' , '2018-07-30' , 'Save-A-Pet');
 insert into donations values ('Jane Smith' , '1000' , '2020-01-01' , 'Paws Placement');
+insert into donations values ('Taylor Swift' , '1200' , '2018-04-12' , 'Paws Placement');
+insert into donations values ('Jimin Park' , '15000' , '2018-08-11' , 'Care for Paws');
+
+insert into donations values ('Barack Obama' , '1000' , '2018-01-01' , 'Lost and Found');
+insert into donations values ('Barack Obama' , '1000' , '2019-01-01' , 'Lost and Found');
+insert into donations values ('Barack Obama' , '1000' , '2020-01-01' , 'Lost and Found');
+
+insert into donations values ('Lisa Kudrow' , '3000' , '2019-05-12' , 'Pets-R-Us');
+insert into donations values ('Dwight Schrute' , '4000' , '2018-06-12' , 'Pets-R-Us');
+insert into donations values ('Jane Smith' , '1500' , '2018-01-01' , 'Come Back Jack');
+insert into donations values ('Jane Smith' , '1500' , '2020-01-01' , 'Come Back Jack');
