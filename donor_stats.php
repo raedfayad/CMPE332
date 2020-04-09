@@ -36,7 +36,7 @@ if(!empty($_POST["donator_name"])){
 					<h2> Donor Statistics </h2>
 				</header>
 				
-				<p class="bh below_header" > Select a name to see what organizations they have dontated to:</p>
+				<p class="bh below_header" > Select a name to see what organizations they have donated to:</p>
 				
 				<form method="post">
 				 	

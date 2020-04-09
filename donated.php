@@ -6,7 +6,7 @@ include "config.php";
 $organization = get_string_form_data('org_donate',$_POST);
 $name = get_string_form_data('donor_name',$_POST);
 $amount = get_string_form_data('amount',$_POST);
-
+$amount = -($amount);
 
 $stmt =  $pdo->prepare('select * from donations where donator_name=:donator_name and donation_date=CURRENT_DATE and org_name =:org_name');
 $stmt->bindParam(':donator_name', $name);

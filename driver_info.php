@@ -29,7 +29,7 @@ if (!empty($_POST['rescue_org'])) {
 			</header> 
 				<p class=" bh below_header"> Select a rescue organization you would like to see driver information on: </p>
 					<form id = "rescue-form" method="post">
-					
+						<div class="select-wrapper">
 						<select name="rescue_org" id="rescue_org" required>
 							<option value="">Rescue Organizations</option>
 						<?php	
@@ -41,12 +41,12 @@ if (!empty($_POST['rescue_org'])) {
 								<option><?php echo $rescue[0] ?></option> 
 								
 								<?php } ?>
-							</select>
+						</select>
 							
 							<div class="sub">
 								<input type="submit" value="Submit"/>
-							</div>
-							</form>
+						</div>
+						</form>
 							<?php 
 							
 					
